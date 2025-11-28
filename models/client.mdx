@@ -1,0 +1,43 @@
+---
+description: "Manage client information and relationships"
+title: "Client Master"
+---
+
+# Client Master
+
+Client Master is the **central directory of all client companies** your recruitment agency works with.\
+It stores company details, contact persons, industries, statuses, and relationship types.\
+All other modules—JDs, Campaigns, Positions, Profiles—depend on this data.
+
+## Fields
+
+| Field               | Type   | Description                                              |
+| :------------------ | :----- | :------------------------------------------------------- |
+| name                | String | Client company name                                      |
+| status              | String | Active / Inactive                                        |
+| contractType        | String | Relationship type (Direct, Direct Recruitment, Contract) |
+| industry            | String | Primary industry (IT, Oil & Gas, Aviation, etc.)         |
+| secondaryIndustries | Array  | Additional industries                                    |
+| contact             | Object | name, email, phone                                       |
+| location            | String | City / Country                                           |
+| website             | String | Client website                                           |
+| employeeCount       | Number | Company size                                             |
+| lastActivity        | Date   | Last interaction with this client                        |
+| description         | String | Notes / company overview                                 |
+
+## Purpose
+
+Client Master acts as the **single source of truth** for all client companies.\
+JDs, Campaigns, Positions, and Profiles pull **company name + company email** from here to ensure consistency.
+
+## Where It Is Used
+
+- **JD Creation** → Company dropdown comes from Client Master
+- **Campaign Creation** → Auto-fills companyEmail from Client Master
+- **Profile Articulation** → Fallback to Client Master for company email
+- **Reporting** → Pipeline & revenue by client
+- **Offers & Positions** → Every job is linked to a client from here
+
+## **Summary**
+
+Client Master is the central directory of all client companies your recruitment team works with. It stores company details, contacts, industries, and relationship types in one place. Other modules like JDs, Campaigns, Profiles, and Positions pull data from here to ensure accuracy and consistency. It keeps the entire RMS aligned by preventing manual entry errors and maintaining a single source of truth for client information.

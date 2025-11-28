@@ -1,0 +1,85 @@
+# **API Overview**
+
+A simple REST API enabling listing, creating, updating, viewing, and deleting Profile Articulations with RBAC protection.
+
+## Endpoint Overview 
+
+| Method     | Endpoint            | Description                               | Access                        |
+| :--------- | :------------------ | :---------------------------------------- | :---------------------------- |
+| **GET**    | `/api/profiles`     | Fetch all profile articulations           | `profile_articulation:read`   |
+| **POST**   | `/api/profiles`     | Create a new profile articulation         | `profile_articulation:create` |
+| **GET**    | `/api/profiles/:id` | Fetch a single profile articulation by ID | `profile_articulation:read`   |
+| **PUT**    | `/api/profiles/:id` | Update an existing profile articulation   | `profile_articulation:update` |
+| **DELETE** | `/api/profiles/:id` | Delete a profile articulation             | `profile_articulation:delete` |
+
+## **API Endpoints**
+
+### **GET /api/profiles**
+
+Fetch all profile articulations.\
+**Access:** `profile_articulation:read`
+
+```
+router.get(
+  '/',
+  protect,
+  requirePermission('profile_articulation', 'read'),
+  getProfiles
+);
+```
+
+### **GET /api/profiles/:id**
+
+Fetch a single profile articulation.\
+**Access:** `profile_articulation:read`
+
+```
+router.get(
+  '/:id',
+  protect,
+  requirePermission('profile_articulation', 'read'),
+  getProfile
+);
+```
+
+### **POST /api/profiles**
+
+Create a new profile articulation.\
+**Access:** `profile_articulation:create`
+
+```
+router.post(
+  '/',
+  protect,
+  requirePermission('profile_articulation', 'create'),
+  createProfile
+);
+```
+
+### **PUT /api/profiles/:id**
+
+Update an existing profile articulation.\
+**Access:** `profile_articulation:update`
+
+```
+router.put(
+  '/:id',
+  protect,
+  requirePermission('profile_articulation', 'update'),
+  updateProfile
+);
+```
+
+### **DELETE /api/profiles/:id**
+
+Delete a profile articulation.\
+**Access:** `profile_articulation:delete`
+
+```
+router.delete(
+  '/:id',
+  protect,
+  requirePermission('profile_articulation', 'delete'),
+  deleteProfile
+);
+```

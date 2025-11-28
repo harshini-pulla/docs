@@ -1,0 +1,64 @@
+# Target Company API
+
+The **Target Company Master API** provides complete CRUD operations for managing strategic companies your team wants to target.\
+These APIs allow you to list, search, create, update, and delete target companies while enforcing **JWT authentication** and **RBAC-based permissions**.**API Summary Table**
+
+## Endpoints Overview
+
+| Method     | Endpoint             | Purpose                  | Permission            |
+| :--------- | :------------------- | :----------------------- | :-------------------- |
+| **GET**    | `/api/companies`     | Get all target companies | target_company:read   |
+| **POST**   | `/api/companies`     | Create new company       | target_company:create |
+| **GET**    | `/api/companies/:id` | Get single company       | target_company:read   |
+| **PUT**    | `/api/companies/:id` | Update company           | target_company:update |
+| **DELETE** | `/api/companies/:id` | Delete company           | target_company:delete |
+
+## **GET /api/companies**
+
+Fetch all target companies.
+
+```
+router
+  .route('/')
+  .get(protect, requirePermission('target_company', 'read'), getCompanies)
+```
+
+## **POST /api/companies**
+
+Create a new target company.
+
+```
+router
+  .route('/')
+  .post(protect, requirePermission('target_company', 'create'), createCompany)
+```
+
+## **GET /api/companies/:id**
+
+Get detailed info of a single company.
+
+```
+router
+  .route('/:id')
+  .get(protect, requirePermission('target_company', 'read'), getCompany)
+```
+
+## **PUT /api/companies/:id**
+
+Update company details.
+
+```
+router
+  .route('/:id')
+  .put(protect, requirePermission('target_company', 'update'), updateCompany)
+```
+
+## **DELETE /api/companies/:id**
+
+Delete a company.
+
+```
+router
+  .route('/:id')
+  .delete(protect, requirePermission('target_company', 'delete'), deleteCompany)
+```

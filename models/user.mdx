@@ -1,0 +1,79 @@
+---
+title: "User Management"
+description: "Manage system users and their permissions"
+---
+
+# **User Model**
+
+The **User** model represents every person who has login access to the RMS.\
+Each user belongs to a specific organization and is assigned a **role**, which controls the features they can access.
+
+Users include Admins, Recruiters, Interviewers, and Candidates — each with different permissions inside the system.
+
+## **Fields**
+
+| Field        | Type   | Description                                              |
+| :----------- | :----- | :------------------------------------------------------- |
+| `name`       | String | Full name of the user                                    |
+| `email`      | String | Unique email used for login                              |
+| `role`       | String | One of: `admin`, `recruiter`, `interviewer`, `candidate` |
+| `department` | String | Department assigned to the user                          |
+| `status`     | String | User status: `active` or `inactive`                      |
+| `activity`   | Object | Tracks user activity: active tasks, completed tasks      |
+| `lastLogin`  | Date   | Timestamp of the user's last login                       |
+
+## **User Roles & Permissions**
+
+### **Admin**
+
+- Full access across the entire application
+- Can create, edit, delete users
+- Can manage all modules (JD, Campaigns, Interviews, Candidate Profiles, etc.)
+- Can activate/deactivate organizations
+- Highest level of control
+
+### **Recruiter**
+
+- Access to all recruitment-related functionalities
+- Can create/manage:
+  - Candidates
+  - Campaigns
+  - Job Descriptions
+  - Interview schedules
+- Can view and manage users (except system-level settings)
+
+### **Interviewer**
+
+- Limited access
+- Can view assigned interview schedules
+- Can update interview results/status
+- Cannot modify users, JD, campaigns, or candidate data
+
+### **Candidate**
+
+- Restricted access
+- Access only to candidate-facing features (if implemented)
+- Cannot access admin/recruiter modules
+
+## **User Management — UI Behavior**
+
+- Dashboard displays:
+  - Total Users
+  - Active Users
+  - Inactive Users
+  - Admin Users
+
+### Available actions:
+
+- **View User**
+- **Edit User**
+- **Delete User**
+
+### Filtering options:
+
+- By Role
+- By Status
+- By Department
+
+**Admins & Recruiters** can create, edit, delete users.\
+**Interviewers & Candidates** cannot access the User Management module.

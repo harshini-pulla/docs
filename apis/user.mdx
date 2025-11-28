@@ -1,0 +1,92 @@
+# **User API**
+
+The User API allows admins and recruiters to manage system users inside the RMS.\
+All routes are protected with authentication and role-based permissions.
+
+## **Endpoints Overview**
+
+| Method | Route            | Description     | Access                                       |
+| :----- | :--------------- | :-------------- | :------------------------------------------- |
+| GET    | `/api/users`     | Get all users   | `user_management:read` OR `interview:create` |
+| GET    | `/api/users/:id` | Get single user | `user_management:read`                       |
+| POST   | `/api/users`     | Create new user | `user_management:create`                     |
+| PUT    | `/api/users/:id` | Update user     | `user_management:update`                     |
+| DELETE | `/api/users/:id` | Delete user     | `user_management:delete`                     |
+
+## **GET /api/users**
+
+Fetch all system users.
+
+```
+router.get('/', protect, requireAny([
+  { resource: 'user_management', action: 'read' },
+  { resource: 'interview', action: 'create' }
+]), getUsers);
+```
+
+## 
+
+## **GET /api/users**
+
+Fetch all system users.
+
+```
+router.get('/', protect, requireAny([
+  { resource: 'user_management', action: 'read' },
+  { resource: 'interview', action: 'create' }
+]), getUsers);
+```
+
+## **GET /api/users**
+
+Fetch all system users.
+
+```
+router.get('/', protect, requireAny([
+  { resource: 'user_management', action: 'read' },
+  { resource: 'interview', action: 'create' }
+]), getUsers);
+```
+
+## **POST /api/users**
+
+Create a new user.\
+Access: `user_management:create`
+
+```
+router.post(
+  '/',
+  protect,
+  requirePermission('user_management', 'create'),
+  validateUser,
+  createUser
+);
+```
+
+## **PUT /api/users/:id**
+
+Update an existing user.\
+Access: `user_management:update`
+
+```
+router.put(
+  '/:id',
+  protect,
+  requirePermission('user_management', 'update'),
+  updateUser
+);
+```
+
+## **DELETE /api/users/:id**
+
+Delete a user.\
+Access: `user_management:delete`
+
+```
+router.delete(
+  '/:id',
+  protect,
+  requirePermission('user_management', 'delete'),
+  deleteUser
+);
+```

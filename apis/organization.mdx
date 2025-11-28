@@ -1,0 +1,108 @@
+# Organization API
+
+API endpoints used to create, update, activate, list, and delete organizations.
+
+## Endpoints Overview
+
+| Method | Route                         | Description                       | Access              |
+| :----- | :---------------------------- | :-------------------------------- | :------------------ |
+| GET    | /api/organizations            | Get all organizations             | organization:read   |
+| GET    | /api/organizations/active     | Get currently active organization | organization:read   |
+| POST   | /api/organizations            | Create a new organization         | organization:update |
+| PUT    | /api/organizations/:id        | Update organization name/logo     | organization:update |
+| PUT    | /api/organizations/:id/status | Activate/Deactivate organization  | organization:update |
+| DELETE | /api/organizations/:id        | Delete organization               | organization:update |
+
+## **POST /api/organizations**
+
+Create a new organization.\
+**Access:** `organization:update`
+
+```
+router.post(
+  '/',
+  protect,
+  requirePermission('organization', 'update'),
+  controller.create
+);
+```
+
+---
+
+## **GET /api/organizations**
+
+Fetch all organizations.\
+**Access:** `organization:read`
+
+```
+router.get(
+  '/',
+  protect,
+  requirePermission('organization', 'read'),
+  controller.list
+);
+```
+
+---
+
+## **GET /api/organizations/active**
+
+Fetch the currently active organization.\
+**Access:** `organization:read`
+
+```
+router.get(
+  '/active',
+  protect,
+  requirePermission('organization', 'read'),
+  controller.getActive
+);
+```
+
+---
+
+## **PUT /api/organizations/:id**
+
+Update organization name/logo.\
+**Access:** `organization:update`
+
+```
+router.put(
+  '/:id',
+  protect,
+  requirePermission('organization', 'update'),
+  controller.updateName
+);
+```
+
+---
+
+## **PUT /api/organizations/:id/status**
+
+Activate or deactivate an organization.\
+**Access:** `organization:update`
+
+```
+router.put(
+  '/:id/status',
+  protect,
+  requirePermission('organization', 'update'),
+  controller.setStatus
+);
+```
+
+---
+
+## **DELETE /api/organizations/:id**
+
+Delete an organization.\
+**Access:** `organization:update`
+
+```
+router.delete(
+  '/:id',
+  protect,
+  requirePermission('organization', 'update'),
+  controller.remove
+);
+```

@@ -1,0 +1,76 @@
+---
+description: "Create, manage, and track job descriptions for recruitment campaigns"
+title: "Job Description Creation"
+---
+
+# Job Description (JD)
+
+The JD model stores the complete structure of a job opening inside the RMS.\
+It captures job information, requirements, workflow status, and analytics that drive recruitment, AI interviews, and profile articulation.
+
+## Fields
+
+| Field              | Type     | Description                                      |
+| :----------------- | :------- | :----------------------------------------------- |
+| `jdId`             | String   | Human-readable JD code (e.g., JD-151125-01)      |
+| `_id`              | ObjectId | Internal MongoDB ID                              |
+| `title`            | String   | Job title (e.g., Senior Backend Developer)       |
+| `company`          | String   | Company name                                     |
+| `location`         | String   | City, country                                    |
+| `employmentType`   | String   | Full-time, Part-time, Contract                   |
+| `workMode`         | String   | Remote / Onsite / Hybrid                         |
+| `category`         | String   | Department/category (Engineering, Safety, Sales) |
+| `priority`         | String   | High, Medium, Low                                |
+| `status`           | String   | Draft, Approved, Published, Closed               |
+| `summary`          | String   | Short summary about the role                     |
+| `responsibilities` | Array    | List of responsibilities                         |
+| `requirements`     | Array    | Required qualifications                          |
+| `skills`           | Object   | `{ required: [], preferred: [] }`                |
+
+### **1. Core Identity**
+
+- **jdId** – Human-readable code (e.g., _JD-151125-01_)
+- **title** – Job title (e.g., _Senior Backend Developer_)
+- **company** – Company name selected from **Client Master**
+- **category** – Functional category (Engineering, Safety, IT, etc.)
+- **location** – City, Country
+- **employmentType** – Full-time / Part-time / Contract / Internship
+- **workMode** – Onsite / Remote / Hybrid
+
+### **2. JD Content**
+
+- **summary** – Short overview of the role
+- **responsibilities** – Array of role responsibilities
+- **requirements** – Array of required qualifications/experience
+- **skills**:
+  - **required** – Must-have skills
+  - **preferred** – Good-to-have skills
+- **salaryRange**:
+  - min
+  - max
+  - currency
+
+### **3. Workflow & Status**
+
+- **status** – Draft / Approved / Published / Closed
+- **priority** – High / Medium / Low
+- **openingsCount** – Number of open positions
+- **createdBy**, **approvedBy**, **publishedBy**
+
+### **4. Analytics & Tracking**
+
+- **applicationsCount** – Total applications received
+- **shortlistedCount** – Total shortlisted candidates
+- **hiredCount** – Total hires (optional)
+
+### **5. Metadata**
+
+- **createdAt**
+- **updatedAt**
+- **publishedAt**
+- **closedAt**
+
+## **Summary**
+
+The JD model defines every detail of a hiring requirement, including job content, company, workflow status, and analytics.\
+It is used throughout the RMS in **Profile Articulation**, **Social Media Content Generation**, and **AI Interview**, where JD data is loaded and processed.

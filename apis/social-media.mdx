@@ -1,0 +1,107 @@
+# Social Media Content API
+
+The Social Media Content API provides endpoints to **create, generate, update, publish, schedule, and delete** social media posts.\
+It also supports approvals and retrieving posts for analytics and review.
+
+## Endpoint Overview 
+
+| Method     | Endpoint                       | Description                           | Access                  |
+| :--------- | :----------------------------- | :------------------------------------ | :---------------------- |
+| **GET**    | `/api/social-content`          | Fetch all social content              | `social_content:read`   |
+| **POST**   | `/api/social-content`          | Create a new manual post              | `social_content:create` |
+| **POST**   | `/api/social-content/generate` | AI-generate content from a JD/profile | `social_content:create` |
+| **GET**    | `/api/social-content/:id`      | Get a single content item             | `social_content:read`   |
+| **PUT**    | `/api/social-content/:id`      | Update social content                 | `social_content:update` |
+| **DELETE** | `/api/social-content/:id`      | Delete content                        | `social_content:delete` |
+
+# \*\*API Blocks \*\*
+
+### GET /api/social-content
+
+Fetch all social media content.
+
+**Access:** `social_content:read`
+
+```
+router.get(
+  '/',
+  protect,
+  requirePermission('social_content', 'read'),
+  getAll
+);
+```
+
+## POST /api/social-content/generate
+
+Generate AI-powered content using JD + Profile data.
+
+**Access:** `social_content:create`
+
+```
+router.post(
+  '/generate',
+  protect,
+  requirePermission('social_content', 'create'),
+  generate
+);
+```
+
+## **POST /api/social-content/generate**
+
+AI-generate social content based on JD + Profile.
+
+**Access:** `social_content:create`
+
+```
+router.post(
+  '/generate',
+  protect,
+  requirePermission('social_content', 'create'),
+  generate
+);
+```
+
+## **GET /api/social-content/:id**
+
+Fetch a single social content item.
+
+**Access:** `social_content:read`
+
+```
+router.get(
+  '/:id',
+  protect,
+  requirePermission('social_content', 'read'),
+  getOne
+);
+```
+
+## **PUT /api/social-content/:id**
+
+Update an existing social media content post.
+
+**Access:** `social_content:update`
+
+```
+router.put(
+  '/:id',
+  protect,
+  requirePermission('social_content', 'update'),
+  update
+);
+```
+
+## **DELETE /api/social-content/:id**
+
+Delete a social media content post.
+
+**Access:** `social_content:delete`
+
+```
+router.delete(
+  '/:id',
+  protect,
+  requirePermission('social_content', 'delete'),
+  remove
+);
+```

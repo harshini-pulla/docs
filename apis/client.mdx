@@ -1,0 +1,83 @@
+# Client API
+
+API endpoints used to manage client companies inside the RMS.
+
+## Endpoints Overview
+
+| Method     | Endpoint           | Description             | Access          |
+| :--------- | :----------------- | :---------------------- | :-------------- |
+| **GET**    | `/api/clients`     | Fetch all clients       | `client:read`   |
+| **POST**   | `/api/clients`     | Create new client       | `client:create` |
+| **GET**    | `/api/clients/:id` | Fetch a specific client | `client:read`   |
+| **PUT**    | `/api/clients/:id` | Update client           | `client:update` |
+| **DELETE** | `/api/clients/:id` | Delete client           | `client:delete` |
+
+## **GET /api/clients**
+
+Fetch all clients.\
+**Access:** `client:read`
+
+```
+router.get(
+  '/',
+  protect,
+  requirePermission('client', 'read'),
+  getClients
+);
+```
+
+## **POST /api/clients**
+
+Create a new client.\
+**Access:** `client:create`
+
+```
+router.post(
+  '/',
+  protect,
+  requirePermission('client', 'create'),
+  createClient
+);
+```
+
+## **GET /api/clients/:id**
+
+Fetch a specific client.\
+**Access:** `client:read`
+
+```
+router.get(
+  '/:id',
+  protect,
+  requirePermission('client', 'read'),
+  getClient
+);
+```
+
+## **PUT /api/clients/:id**
+
+Update an existing client.\
+**Access:** `client:update`
+
+```
+router.put(
+  '/:id',
+  protect,
+  requirePermission('client', 'update'),
+  updateClient
+);
+```
+
+## **DELETE /api/clients/:id**
+
+Delete a client.\
+**Access:** `client:delete`
+
+```
+router.delete(
+  '/:id',
+  protect,
+  requirePermission('client', 'delete'),
+  deleteClient
+);
+```

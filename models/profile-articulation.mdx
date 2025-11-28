@@ -1,0 +1,59 @@
+---
+description: "Define ideal candidate profiles and sourcing strategies for your job descriptions"
+title: "Profile Articulation"
+---
+
+# **Profile Articulation**
+
+Define the **ideal candidate profile** and **sourcing strategy** for each Job Description (JD).\
+It bridges the gap between JD creation and sourcing by clearly outlining _who to hire_, _how many to hire_, and _where to source them from_.
+
+## **Model Description**
+
+Profile Articulation stores **candidate persona + hiring requirements + sourcing plan** for a specific JD.\
+It includes role details, salary range, target companies, hiring quantity, priority, and status.
+
+## **Fields**
+
+| Field             | Type   | Description                                    |
+| :---------------- | :----- | :--------------------------------------------- |
+| `name`            | String | Profile name (e.g., “DevOps Engineer Profile”) |
+| `role`            | String | Role/designation taken from the JD             |
+| `company`         | String | Client/company for which hiring is done        |
+| `status`          | String | Draft, Active, or Completed                    |
+| `priority`        | String | High, Medium, or Low                           |
+| `salaryRange`     | Object | Min–max salary details                         |
+| `targetCompanies` | Array  | Companies selected from Target Company Master  |
+| `quantityToHire`  | Number | Number of required hires                       |
+| `jdId`            | String | Linked Job Description                         |
+| `createdBy`       | String | User who created the profile                   |
+| `createdAt`       | Date   | Timestamp                                      |
+| `updatedAt`       | Date   | Timestamp                                      |
+
+## **Purpose**
+
+- Defines a **clear hiring strategy** before sourcing begins
+- Ensures alignment between **JD, recruiter, and hiring manager**
+- Identifies **target companies** and **salary benchmarks**
+- Helps recruitment teams prioritize roles effectively
+- Supports sourcing, campaigns, and reporting with structured data
+
+## **Field Explanation**
+
+- **Status**
+  - **Draft** – profile being prepared
+  - **Active** – currently sourcing
+  - **Completed** – hiring finished
+- **Priority**\
+  Indicates urgency (High → most critical roles)
+- **Salary Range**\
+  Helps validate candidate expectations
+- **Target Companies**\
+  Imported from **Target Company Master**, used for sourcing direction
+- **Quantity to Hire**\
+  Shows manpower requirement for the JD
+
+## **Summary**
+
+Profile Articulation serves as a **candidate persona + sourcing blueprint**, ensuring every JD has a well-defined strategy for sourcing and hiring.\
+It standardizes the hiring plan across recruiters and supports downstream modules like sourcing campaigns, social media content, and AI-powered interviews.

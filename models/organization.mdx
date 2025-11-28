@@ -1,0 +1,68 @@
+---
+description: "Manage your organizations and choose which one is active"
+title: "Your organization"
+---
+
+# **Organization Model**
+
+The **Organization** model represents a company or business unit inside the RMS.\
+Users can create multiple organizations, but **only one organization can be active at a time**.
+
+This is used to control:
+
+- Which organization’s data the user is currently working with
+- Access permissions
+- Job postings, campaigns, candidates, etc.
+
+## **Fields**
+
+| Field       | Type    | Description                         |
+| :---------- | :------ | :---------------------------------- |
+| `name`      | String  | Name of the organization            |
+| `status`    | Boolean | `true` = Active, `false` = Inactive |
+| `createdAt` | Date    | Timestamp                           |
+| `updatedAt` | Date    | Timestamp                           |
+
+## **Functionalities**
+
+### Add Organization
+
+The admin can create a new organization by entering its name and logo.
+
+### Edit Organization
+
+Name and logo can be updated anytime.
+
+### Delete Organization
+
+An organization can be removed, provided it is not currently active.
+
+### Activate Organization
+
+Only **one** organization can be active at a time.\
+When the admin toggles an organization to “Active”:
+
+- The previously active organization automatically becomes inactive
+- All dashboards and data views switch to the active organization context
+
+## **UI Behavior **
+
+- Total organizations displayed at the top
+- Active count and inactive count shown
+- Organization list with:
+  - Logo initials (AP, MS)
+  - Status toggle (Active/Inactive)
+  - Edit button
+  - Delete button
+- Search bar to filter organizations
+
+## **Where this model is used?**
+
+- **Dashboard** (shows selected org data)
+- **User Management**
+- **JD Creation**
+- **Client Master**
+- **Candidate Profile**
+- **Interview Scheduling**
+
+Everything depends on the selected active organization.

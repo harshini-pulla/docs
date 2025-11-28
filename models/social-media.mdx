@@ -1,0 +1,35 @@
+---
+description: "Generate and manage AI-powered social media content for job postings"
+title: "Social Media Content"
+---
+
+# Social Media Content 
+
+The **Social Media Content** module manages AI-generated social posts for job promotions.\
+It centralizes content creation, editing, approval, scheduling, and publishing across platforms like **LinkedIn, Instagram, YouTube**, etc.\
+This ensures consistent messaging, faster content generation, and detailed tracking of **views + applications**.
+
+## **Model Description**
+
+A Social Media Content record represents **one social media post** created for a specific **JD or Role**.\
+The system uses JD + Profile data to auto-generate customized platform-specific posts, which can then be edited, approved, published, or scheduled.
+
+## **Fields**
+
+| **\_id**        | String | Unique content ID                                    |
+| :-------------- | :----- | :--------------------------------------------------- |
+| **platform**    | String | LinkedIn / Instagram / YouTube / etc.                |
+| **contentType** | String | Post / Article / Short / Reel / Story                |
+| **jdId**        | String | JD associated with this content                      |
+| **profileId**   | String | Profile Articulation reference                       |
+| **title**       | String | Title shown in the card (usually “Job”)              |
+| **body**        | String | Full text of post                                    |
+| **hashtags**    | Array  | Auto-generated tag list                              |
+| **media**       | Array  | Images / videos                                      |
+| **priority**    | String | High / Medium / Low                                  |
+| **status**      | String | Generated / Draft / Approved / Published / Scheduled |
+
+## \*\*Summary \*\*
+
+Social Media Content stores all AI-generated promotional posts used to market job openings across different platforms.\
+It helps recruiters quickly generate content, approve it, schedule/publish it, and track performance such as views and applications.

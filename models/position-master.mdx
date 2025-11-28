@@ -1,0 +1,36 @@
+---
+description: "Manage job positions and their associated industries"
+title: "Position Master"
+---
+
+# **Position Master**
+
+Position Master stores all standardized job positions and their industries in one central list.\
+It ensures consistent job titles across the RMS and prevents free-text variations.\
+Other modules like Target Company Master use this list to assign relevant roles.\
+This helps recruitment and BD teams stay aligned on the exact positions they target or hire for.
+
+## **Position Model**
+
+### **Fields**
+
+| Field              | Type   | Description                                          |
+| :----------------- | :----- | :--------------------------------------------------- |
+| **positionName**\* | String | Required job position title (e.g., “Civil Engineer”) |
+| **industry**       | String | Industry this role belongs to (e.g., IT, Oil & Gas)  |
+| **description**    | String | Optional detailed description                        |
+| **createdAt**      | Date   | Timestamp                                            |
+| **updatedAt**      | Date   | Timestamp                                            |
+
+## **Purpose**
+
+Position Master provides a **centralized list of standard job titles** (e.g., HSE Officer, HR Executive, Software Engineer).\
+It ensures uniformity across the system by preventing free-text job titles in JDs, Campaigns, Target Companies, and reporting.
+
+## **Summary**
+
+- Acts as the **official catalog** of job positions in the RMS.
+- Stores job titles, industries, and descriptions in one clean master list.
+- Used by other modules like **Target Company Master** to assign relevant roles.
+- Ensures consistency in naming for analytics, search, filtering, and reporting.
+- Only Admins and Recruiters can create, edit, or delete positions.

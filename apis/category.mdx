@@ -1,0 +1,68 @@
+# Category API
+
+API endpoints to manage categories, sub categories, and sub sub categories.
+
+## Endpoints Overview
+
+| Method | Route               | Description             | Access          |
+| :----- | :------------------ | :---------------------- | :-------------- |
+| GET    | /api/categories     | Get all categories      | category:read   |
+| POST   | /api/categories     | Create category         | category:create |
+| GET    | /api/categories/:id | Get a specific category | category:read   |
+| PUT    | /api/categories/:id | Update category         | category:update |
+| DELETE | /api/categories/:id | Delete category         | category:delete |
+
+## GET /api/categories
+
+Fetch all categories.\
+Access: `category:read`
+
+```
+router
+  .route('/')
+  .get(protect, requirePermission('category', 'read'), getCategories)
+```
+
+## GET /api/categories/:id
+
+Fetch one category.\
+Access: `category:read`
+
+```
+router
+  .route('/:id')
+  .get(protect, requirePermission('category', 'read'), getCategory)
+```
+
+##  POST /api/categories
+
+Create a new category.\
+Access: `category:create`
+
+```
+router
+  .route('/')
+  .post(protect, requirePermission('category', 'create'), createCategory)
+```
+
+## PUT /api/categories/:id
+
+Update category (name, description, status, sub categories).\
+Access: `category:update`
+
+```
+router
+  .route('/:id')
+  .put(protect, requirePermission('category', 'update'), updateCategory)
+```
+
+## DELETE /api/categories/:id
+
+Delete a category.\
+Access: `category:delete`
+
+```
+router
+  .route('/:id')
+  .delete(protect, requirePermission('category', 'delete'), deleteCategory)
+```

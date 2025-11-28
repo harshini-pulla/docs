@@ -1,0 +1,73 @@
+---
+description: "Manage categories, sub-categories, and descriptions for role taxonomy"
+title: "Category Management"
+---
+
+# Category Management
+
+Category Management maintains the master list of **role categories, sub-categories, and sub-sub-categories**.\
+It supports unlimited levels to organize job roles clearly across the RMS.
+
+Used by JD Creation, Candidate Profiles, and Profile Articulation.
+
+---
+
+## Category Fields
+
+| Field       | Type   | Description                                    |
+| :---------- | :----- | :--------------------------------------------- |
+| name        | String | Category name (e.g., “Information Technology”) |
+| description | String | What this category covers                      |
+| status      | String | “active” or “inactive”                         |
+| createdAt   | Date   | Timestamp                                      |
+| updatedAt   | Date   | Timestamp                                      |
+
+---
+
+## Sub Categories
+
+Each Category can have **N number of sub-categories**.
+
+### Sub Category Fields
+
+| Field           | Type   | Description                                     |
+| :-------------- | :----- | :---------------------------------------------- |
+| name            | String | Name of sub category (e.g., Delivery, Clinical) |
+| description     | String | Explanation of the sub category                 |
+| totalExperience | String | Required experience (e.g., 2–5 years)           |
+
+Admins can add multiple sub categories using **Add Sub Category**.
+
+## Sub Sub Categories
+
+Each Sub Category supports **N number of sub-sub-categories**.
+
+### Sub Sub Category Fields
+
+| Field           | Type   | Description                  |
+| :-------------- | :----- | :--------------------------- |
+| name            | String | Detailed specialization name |
+| description     | String | Description                  |
+| totalExperience | String | Required experience          |
+| targetCompanies | Array  | Linked preferred companies   |
+
+Admins can add multiple sub-sub categories using **Add Sub Sub Category**.
+
+## Purpose
+
+Category Management creates a consistent role taxonomy shared across:
+
+- JD Creation
+- Candidate classification
+- Profile Articulation
+
+## Summary
+
+Category Management is the core module that defines the **role structure** of the entire RMS.\
+It allows admins to build a complete multi-level taxonomy:
+
+- **Category** (highest level)
+- **Sub Category** (specialized role group)
+- **Sub Sub Category** (detailed specialization + target companies)
+
+This structure is reused across the platform to keep naming consistent and to improve filtering, reporting, and search.

@@ -1,0 +1,41 @@
+---
+description: "Manage target companies and track recruitment opportunities"
+title: "Target Company Master"
+---
+
+# **Target Company Master**
+
+The **Target Company** model stores structured information about companies your team wants to pursue for future recruitment opportunities.\
+It helps track priority, industry, contacts, and business potential.
+
+## **Target Company Model**
+
+| Field                     | Type   | Description                         |
+| :------------------------ | :----- | :---------------------------------- |
+| **name**                  | String | Company name                        |
+| **industry**              | String | e.g., IT, Healthcare, Retail        |
+| **category**              | String | e.g., Software, Oil & Gas           |
+| **location**              | String | City, Country                       |
+| **companySize**           | String | e.g., 51–200, 5000+ employees       |
+| **priority**              | String | High / Medium / Low                 |
+| **status**                | String | Active / Inactive                   |
+| **website**               | String | Company website URL                 |
+| **email**                 | String | Company email                       |
+| **phone**                 | String | Contact phone number                |
+| **keyContacts**           | Array  | List of `{ name, position, email }` |
+| **targetPositions**       | Array  | Roles you want from this company    |
+| **lastContact**           | Date   | Last interaction date               |
+| **notes**                 | String | Internal notes                      |
+| **createdAt / updatedAt** | Date   | Timestamps                          |
+
+## **Purpose**
+
+The **Target Company Master** is used to manage potential or strategic companies that your recruitment team wants to approach.\
+It helps track company details, industry, priority level, key contacts, and target positions, allowing the business development and recruitment teams to focus their outreach on the most valuable opportunities.
+
+## **Summary**
+
+Target Company Master acts as a CRM(Customer Relationship Management)-like module for managing future business prospects.\
+It stores comprehensive information about each target company, including industry, size, location, contacts, and priority.\
+Users can search, filter, add, edit, and delete companies, helping teams stay aligned on which organizations to pursue.\
+This module ensures structured tracking of high-value prospects and supports smarter planning for recruitment and client acquisition.

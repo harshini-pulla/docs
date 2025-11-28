@@ -1,0 +1,70 @@
+# **Job Description API**
+
+Provides secure, role-based endpoints to create, retrieve, update, delete, and duplicate job descriptions, along with application statistics and AI-formatted JD data.
+
+## Endpoints Overview
+
+| Method | Endpoint                 | Purpose      | Access                   |
+| :----- | :----------------------- | :----------- | :----------------------- |
+| GET    | `/api/jds`               | List all JDs | `job_description:read`   |
+| POST   | `/api/jds`               | Create JD    | `job_description:create` |
+| GET    | `/api/jds/:id`           | Get JD by ID | `job_description:read`   |
+| PUT    | `/api/jds/:id`           | Update JD    | `job_description:update` |
+| DELETE | `/api/jds/:id`           | Delete JD    | `job_description:delete` |
+| POST   | `/api/jds/:id/duplicate` | Duplicate JD | `job_description:create` |
+
+## API Endpoints
+
+## GET /api/jds
+
+Fetch all job descriptions with search, filters & pagination.
+
+```
+GET /api/jds
+Access: job_description:read
+```
+
+## POST /api/jds
+
+Create a new job description.
+
+```
+POST /api/jds
+Access: job_description:create
+```
+
+## GET /api/jds/:id
+
+Get full JD details.
+
+```
+GET /api/jds/:id
+Access: job_description:read
+```
+
+## PUT /api/jds/:id
+
+Update JD fields.
+
+```
+PUT /api/jds/:id
+Access: job_description:update
+```
+
+## DELETE /api/jds/:id
+
+Delete a JD.
+
+```
+DELETE /api/jds/:id
+Access: job_description:delete
+```
+
+## POST /api/jds/:id/duplicate
+
+Duplicate an existing JD to a new Draft copy.
+
+```
+POST /api/jds/:id/duplicate
+Access: job_description:create
+```

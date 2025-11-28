@@ -1,0 +1,79 @@
+# \*\*Position Master API \*\*
+
+The Position Master API provides CRUD operations to manage standardized job positions.\
+All endpoints use **JWT authentication** and **RBAC permissions** (`position:create`, `position:read`, `position:update`, `position:delete`).
+
+Base route:\
+`/api/positions`
+
+## Endpoints Overview
+
+| Method     | Endpoint             | Description                 | Permission      |
+| :--------- | :------------------- | :-------------------------- | :-------------- |
+| **GET**    | `/api/positions`     | List all positions          | position:read   |
+| **POST**   | `/api/positions`     | Create a new position       | position:create |
+| **GET**    | `/api/positions/:id` | Get single position details | position:read   |
+| **PUT**    | `/api/positions/:id` | Update a position           | position:update |
+| **DELETE** | `/api/positions/:id` | Delete a position           | position:delete |
+
+---
+
+## **API Endpoints**
+
+## **GET /api/positions**
+
+Fetch all positions.
+
+```
+router
+  .route('/')
+  .get(protect, requirePermission('position', 'read'), getPositions)
+```
+
+---
+
+## **POST /api/positions**
+
+Create a new position.
+
+```
+router
+  .route('/')
+  .post(protect, requirePermission('position', 'create'), createPosition)
+```
+
+---
+
+## **GET /api/positions/:id**
+
+Fetch a single position.
+
+```
+router
+  .route('/:id')
+  .get(protect, requirePermission('position', 'read'), getPosition)
+```
+
+---
+
+## **PUT /api/positions/:id**
+
+Update an existing position.
+
+```
+router
+  .route('/:id')
+  .put(protect, requirePermission('position', 'update'), updatePosition)
+```
+
+---
+
+## **DELETE /api/positions/:id**
+
+Delete a position.
+
+```
+router
+  .route('/:id')
+  .delete(protect, requirePermission('position', 'delete'), deletePosition)
+```
