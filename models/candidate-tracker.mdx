@@ -1,0 +1,64 @@
+# Candidate Tracker
+
+The **Candidate Tracker** is the core of the RMS recruitment workflow. It provides a complete 360° view of every candidate inside a Recruitment Campaign, covering screening, interviews, document verification, AI evaluations, and client feedback.
+
+This module is the **heart of RMS**, where recruiters manage the entire candidate journey from first interaction to final shortlisting.
+
+---
+
+## Candidate Tracker – Model Overview
+
+Each candidate within a campaign stores:
+
+- Pre-screening responses
+- CV improvement suggestions
+- Interview notes (L1 + L2)
+- AI transcript, summary, action points
+- Client notes
+- Document verification details
+- Verification notes
+- Status + Stage updates
+
+These fields are stored across models such as **Candidate**, **InterviewNotes**, **ClientNotes**, and **Verification Data**.
+
+## Fields
+
+| Section                | Fields                                            | Description                                       |
+| :--------------------- | :------------------------------------------------ | :------------------------------------------------ |
+| **Candidate Info**     | name, email, phone, skills, experience            | Basic profile & CV data                           |
+| **Status Tracking**    | currentStatus, currentStage                       | Shortlisted, Verified, Rejected, L1 done, L2 done |
+| **Pre-Screening Form** | responses[], completionRate, score                | First test by the company                         |
+| **CV Improvements**    | suggestions[], improvementEmails[]                | AI-generated improvements sent to candidate       |
+| **L1 Interview Notes** | notes, transcript, summary, actionPoints          | First round interview evaluation                  |
+| **L2 Interview Notes** | notes, transcript, summary, actionPoints          | Final round evaluation                            |
+| **Client Notes**       | notes[]                                           | Feedback written directly by the client           |
+| **Verification**       | employmentGaps, certificates[], verificationNotes | Employment history + document authenticity        |
+| **Movement**           | bucket, screeningDecision                         | Fit / No-Fit / Fit Junior / Fit Senior            |
+
+## Purpose
+
+The Candidate Tracker is used to:
+
+- View and manage all candidates assigned to a particular recruitment campaign
+- Review pre-screening form responses
+- Track L1/L2 interview progress with AI insights
+- Send & review CV improvements
+- Verify documents and check employment gaps
+- Record client-specific feedback
+
+Make final hiring decisions
+
+## **Model Summary**
+
+The **Candidate Tracker model** represents everything the RMS stores about a candidate _inside_ a recruitment campaign.\
+It combines profile information, pre-screening results, AI interview insights, client feedback, and document verification data into a single, unified view.
+
+This model acts as the **central decision-making dataset** for recruiters and clients.
+
+### **What the Model Represents**
+
+- A **candidate’s journey** inside a specific campaign
+- Screens, evaluations, notes, and decisions
+- AI-generated interview data (transcripts, summaries, action points)
+- Verification status and certificate validity
+- Company-side assessments (client notes)

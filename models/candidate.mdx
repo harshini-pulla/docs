@@ -1,0 +1,36 @@
+# **Candidate Profile**
+
+## **Model Summary**
+
+The **Candidate Profile** is the central record for each applicant in the RMS. It stores personal details, professional background, resume files (CV), parsed URS JSON, application status, and links to recruitment campaigns. This model enables candidate creation, editing, document uploads, resume parsing, deep AI research, communication actions, and connections to pre-screening and interview workflows.
+
+## Fields 
+
+| Field Name                    | Description                                                           | Purpose                            |
+| :---------------------------- | :-------------------------------------------------------------------- | :--------------------------------- |
+| **name**                      | Candidate’s full name                                                 | Identification                     |
+| **email**                     | Primary email address                                                 | Login, communication, verification |
+| **phone**                     | Contact number                                                        | Recruiter communication            |
+| **location**                  | City/Region                                                           | Screening relevance                |
+| **status**                    | Application status (Applied, Shortlisted, Interview, Rejected, Hired) | Tracks hiring stage                |
+| **campaignId / campaignName** | Campaign to which candidate is linked                                 | Enables campaign-level tracking    |
+| **skills**                    | Extracted or added skills list                                        | Skill-based filtering/search       |
+| **experience**                | Total experience in years                                             | Fit analysis                       |
+| **position / expectedSalary** | Candidate's current role & expected compensation                      | Matching & offer decisions         |
+| **urs_status**                | READY / PROCESSING / ERROR                                            | For AI pipeline monitoring         |
+| **socialProfiles**            | LinkedIn, GitHub, Portfolio                                           | External profile verification      |
+| **employmentHistory[]**       | Parsed employment timeline                                            | Verification & fit analysis        |
+| **applicationTimeline**       | CreatedAt / Received date                                             | Compliance + reporting             |
+| **confirmationStatus**        | Email sent, pending, delivered                                        | Tracks candidate communication     |
+| **photo**                     | Profile picture                                                       | UI display                         |
+
+## Purpose
+
+The candidate profile serves as the **single source of truth** for all candidate-centric data. It is used to:
+
+- Add, store, and manage candidate information
+- Link candidates to recruitment campaigns
+- Store CV, URS JSON, and run **AI Deep Research**
+- View screening, interview, and verification details
+- Send confirmation emails and manage communication
+- Support search, filtering, and campaign shortlisting

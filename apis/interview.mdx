@@ -1,0 +1,57 @@
+# Interview schedule API
+
+The Interview Schedule API allows you to **create, update, view, delete, notify, and AI-evaluate interviews**.\
+It includes role-based access control, interviewer-scoped filtering, AI transcript callbacks, and public access links for candidates.
+
+## Endpoints Overview
+
+| Category         | Endpoint                                   | Purpose                                                |
+| :--------------- | :----------------------------------------- | :----------------------------------------------------- |
+| Fetch            | `GET /api/interviews`                      | Get all interviews (filters interviewer automatically) |
+| Fetch One        | `GET /api/interviews/:id`                  | View full interview details                            |
+| Create           | `POST /api/interviews`                     | Create new interview schedule                          |
+| Notify           | `POST /api/interviews/:id/notify`          | Send email + calendar invite                           |
+| Public Candidate | `GET /api/interviews/public/candidate/:id` | Public interview info                                  |
+
+# API Endpoints 
+
+### **Get All Interviews**
+
+```
+GET /api/interviews
+```
+
+Returns all interviews.\
+If user role is "interviewer", only their assigned interviews are returned.
+
+### **Create Interview**
+
+```
+POST /api/interviews
+```
+
+Creates a new interview with campaign, candidate, interviewer, timing, meeting link, and schedule name.
+
+### **Get Interview by ID**
+
+```
+GET /api/interviews/:id
+```
+
+Returns detailed information of a single interview.
+
+### **Send Interview Notification (Email + Calendar Invite)**
+
+```
+POST /api/interviews/:id/notify
+```
+
+Sends meeting mail with .ics file to candidate and interviewer.
+
+### **Public Candidate Interview Information**
+
+```
+GET /api/interviews/public/candidate/:id
+```
+
+Public read-only view for candidates scheduled for AI Interviews.

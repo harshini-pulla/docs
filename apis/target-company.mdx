@@ -60,5 +60,9 @@ Delete a company.
 ```
 router
   .route('/:id')
-  .delete(protect, requirePermission('target_company', 'delete'), deleteCompany)
+  .delete(
+    protect,
+    requirePermission('target_company', 'delete'),
+    deleteCompany
+  );
 ```

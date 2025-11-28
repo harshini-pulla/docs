@@ -1,0 +1,150 @@
+# **Recruitment Campaign Workflow**
+
+This workflow explains how admins and recruiters create, manage, and track hiring campaigns inside the RMS.
+
+![Screenshot 2025-11-28 135911.png](/images/Screenshot2025-11-28135911.png)
+
+## **Create Recruitment Campaign**
+
+Click **New Campaign**
+
+## **A. General Info**
+
+Fill in the required details:
+
+- **Select Profile Articulation**
+- **Campaign Name**
+- **Status** (Planning / Active / On Hold / Completed)
+- **Company Name**
+- **Company Email**
+- **Start Date**
+- **End Date**
+- **Salary Offered Range** (Min / Max)
+- **Vendor Rate**
+
+Click **Save** to create the base campaign.
+
+![Screenshot 2025-11-28 140433.png](/images/Screenshot2025-11-28140433.png)
+
+## **B. Pre-Screening Form**
+
+### **Purpose**
+
+The Pre-Screening Form is the **first evaluation test** sent to candidates after they are shortlisted.\
+It helps recruiters verify fundamental eligibility before interviews.
+
+### **Steps**
+
+- Enter **Form Title** (default: "Pre-screening Form")
+- Add questions using **Add Question**
+- For each question:
+  - Enter **Question Text**
+  - Select **Input Type** (Text, Number, Yes/No, Select)
+  - Mark **Required** if needed
+- Click **Preview Form** to see how the candidate will view it
+- Click **Save**
+
+### **How it works in the system**
+
+- After a candidate is marked **Fit**, the system sends this pre-screening form link via email.
+- Candidate responses appear in:\
+  **Campaign → Candidate → Pre-Screening Responses**
+
+![Screenshot 2025-11-28 140510.png](/images/Screenshot2025-11-28140510.png)
+
+## **C. Question Bank**
+
+### **Purpose**
+
+The Question Bank is used by the **AI interview engine** to ask relevant questions and evaluate candidate answers.
+
+### **Steps**
+
+- Click **Add Question**
+- Enter **Question**
+- Enter the **Expected Answer**
+- Add multiple Q&A pairs as needed
+- Click **Save Questions**
+
+### **How it works in the system**
+
+- The AI uses these questions during interviews to:
+  - Evaluate candidate responses
+  - Generate interview summaries
+  - Produce fit/no-fit recommendations
+  - Maintain consistent assessment across candidates
+
+![Screenshot 2025-11-28 140545.png](/images/Screenshot2025-11-28140545.png)
+
+## **View Campaign**
+
+- Click the **eye icon** on any campaign.
+- View:
+  - Complete role details
+  - Salary, budget & status
+  - Linked Profile Articulation
+  - Pre-screening form
+  - Question bank
+  - Assigned recruiters
+
+Used for reviewing information before editing.
+
+![Screenshot 2025-11-28 140612.png](/images/Screenshot2025-11-28140612.png)
+
+## **Edit Campaign** 
+
+- Click **Edit** on the selected campaign.
+- Update:
+  - Status
+  - Timeline
+  - Salary or Budget
+  - Profile Articulation
+  - Company details
+- Click **Save**\
+  → Changes reflect instantly.
+
+![Screenshot 2025-11-28 140643.png](/images/Screenshot2025-11-28140643.png)
+
+## **Delete Campaign**
+
+- Click **Delete**
+- Confirm deletion
+- Campaign is removed permanently (if not linked to critical dependencies).
+
+![image.png](/images/image.png)
+
+## **Search & Filter Campaigns**
+
+You can filter campaigns by:
+
+- Status (Active, Planning, Completed)
+- Client name
+- Profile Articulation
+- Campaign title
+
+Search supports keywords in:
+
+- Campaign name
+- Company name
+- Profile name
+
+![Screenshot 2025-11-28 140849.png](/images/Screenshot2025-11-28140849.png)
+
+## **Where Is Recruitment Campaign Used?**
+
+Recruitment Campaigns link directly to:
+
+- **Candidate Tracking**
+- **Interview Scheduling**
+- **Pre-Screening Responses**
+- **AI Interview Evaluations**
+- **Client Notes & Approvals**
+- **CV Feedback & Representation Emails**
+
+All downstream workflows rely on the **campaignId**.
+
+## **Summary**
+
+Recruitment Campaign acts as the **core hiring container**.\
+Every candidate action — shortlisting, screening, interviewing, feedback, evaluation — is tied to a specific campaign.\
+It ensures structured execution of hiring processes across clients and roles.

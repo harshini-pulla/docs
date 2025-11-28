@@ -1,0 +1,68 @@
+# **Recruitment campaign**
+
+A **Recruitment Campaign** is a structured hiring project created for a specific **role (Profile Articulation)** for a particular **client/company**.\
+Every activity in RMS (candidate screening, pre-screening forms, interviews, verification, client notes) connects back to a **campaignId**.
+
+### **Fields**
+
+| Field                       | Type     | Description                                           |
+| :-------------------------- | :------- | :---------------------------------------------------- |
+| **\_id**                    | ObjectId | Unique campaign identifier                            |
+| **name**                    | String   | Campaign name (e.g., Senior Backend Developer Hiring) |
+| **profileArticulationId**   | ObjectId | Linked profile articulation                           |
+| **profileArticulationName** | String   | Display name of profile                               |
+| **companyName**             | String   | Client company                                        |
+| **companyEmail**            | String   | Client email                                          |
+| **status**                  | String   | Planning / Active / On Hold / Completed / Cancelled   |
+| **startDate**               | Date     | Campaign start                                        |
+| **endDate**                 | Date     | Campaign end                                          |
+| **salaryOffered**           | Object   | Min/Max salary + currency                             |
+| **budget (vendorRate)**     | Object   | Vendor commercial rate                                |
+
+## **Field-Level Explanation**
+
+### **General Info**
+
+- **Profile Articulation** → The role structure (skills, responsibilities)
+- **Campaign Name** → The hiring project name
+- **Company Name** → Client name
+- **Company Email** → Used for proposals & client submissions
+- **Status** → Controls campaign state (Active, Completed, On Hold)
+
+### **Dates**
+
+- **Start Date**
+- **End Date**
+  - Validation: _endDate must be greater than startDate_
+
+### **Salary Offered Range**
+
+- Minimum salary
+- Maximum salary
+- Currency (QAR, INR, USD based on your RMS)
+
+### **Vendor Rate**
+
+- Commercial budget charged to the client
+
+## Purpose 
+
+The module helps:
+
+- Create organized hiring pipelines for clients
+- Track all candidates for a specific role
+- Manage screening → verification → interviews → client submissions
+- Store hiring timelines, status, salary range, vendor budget
+- Connect JD, Profile Articulation, Candidates, and Interviews into one workflow
+
+It is the **central entry point** of the recruitment workflow.
+
+## Summary 
+
+Recruitment Campaign module helps your team:
+
+- Define hiring requirements for each client
+- Track candidate stages (screening → interview → verification)
+- Manage pre-screening forms, AI interviews, CV edits
+- Collaborate with recruitment teams
+- Generate data for dashboards, analytics, and reporting

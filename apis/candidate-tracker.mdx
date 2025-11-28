@@ -1,0 +1,91 @@
+# Candidate Tracker API
+
+The Candidate Tracker APIs allow recruiters to **view, update, screen, interview, verify, and manage candidates** inside a specific recruitment campaign.\
+They support **pre-screening**, **interviews**, **AI insights**, **document verification**, and **client feedback** to ensure smooth hiring workflows.
+
+# **Candidate Tracker – API Endpoint Overview**
+
+| **Category**                              | **Endpoint**                                                            | **Purpose**                                                              |
+| :---------------------------------------- | :---------------------------------------------------------------------- | :----------------------------------------------------------------------- |
+| **Candidate Screening & Movement**        | `POST /api/campaigns/:campaignId/candidates/:id/screen`                 | Save screening decision (fit / no-fit / junior / senior)                 |
+|                                           | `PUT /api/campaigns/:campaignId/candidates/:id/bucket`                  | Move candidate to a bucket (Fit / Rejected / Pending / Requires CV Edit) |
+| **Pre-Screening Form**                    | `POST /api/campaigns/:campaignId/candidates/:id/send-form`              | Send pre-screening form link to the candidate                            |
+|                                           | `GET /api/campaigns/:campaignId/candidates/:id/pre-screening-responses` | Get this candidate’s pre-screening form responses                        |
+|                                           | `GET /api/campaigns/:campaignId/pre-screening-responses`                | View all form responses in this campaign                                 |
+| **Interview Notes (L1/L2) & AI Insights** | `GET /api/campaigns/:campaignId/candidates/:id/interview-notes`         | Get L1/L2 notes + AI transcript + summary + points of action             |
+|                                           | `PUT /api/campaigns/:campaignId/candidates/:id/interview-notes`         | Update or insert L1/L2 interview notes and insights                      |
+| **Client Notes**                          | `GET /api/campaigns/:campaignId/candidates/:id/client-notes`            | Retrieve client notes for this candidate                                 |
+|                                           | `POST /api/campaigns/:campaignId/candidates/:id/client-notes`           | Add a new client note                                                    |
+|                                           | `PUT /api/campaigns/:campaignId/candidates/:id/client-notes`            | Update all notes or set                                                  |
+| **Document Verification**                 | `POST /api/campaigns/:campaignId/candidates/:id/verification`           | Save employment gap analysis + certificate verification status           |
+
+## API Endpoints
+
+## Candidate Screening & Movement
+
+```
+POST /api/campaigns/:campaignId/candidates/:id/screen
+```
+
+Record screening decision (fit / no-fit / fit-junior / fit-senior).
+
+```
+PUT /api/campaigns/:campaignId/candidates/:id/bucket
+```
+
+Move candidate to recruitment buckets.
+
+## Pre-Screening Form
+
+```
+POST /api/campaigns/:campaignId/candidates/:id/send-form
+```
+
+Send pre-screening form to candidate.
+
+```
+GET /api/campaigns/:campaignId/candidates/:id/pre-screening-responses
+```
+
+Get candidate’s submitted responses.
+
+```
+GET /api/campaigns/:campaignId/pre-screening-responses
+```
+
+View all form responses for the campaign.
+
+## Interview Notes (L1/L2)
+
+```
+GET /api/campaigns/:campaignId/candidates/:id/interview-notes
+```
+
+```
+PUT /api/campaigns/:campaignId/candidates/:id/interview-notes
+Body: { l1Notes, l2Notes, transcript, summary, actionPoints }
+```
+
+Stores L1 and L2 AI-assisted interview evaluations.
+
+## Client Notes
+
+```
+GET /api/campaigns/:campaignId/candidates/:id/client-notes
+```
+
+```
+POST /api/campaigns/:campaignId/candidates/:id/client-notes
+```
+
+```
+PUT /api/campaigns/:campaignId/candidates/:id/client-notes
+```
+
+## Document Verification
+
+```
+POST /api/campaigns/:campaignId/candidates/:id/verification
+```
+
+Store verification notes (gaps, certificate checks, etc.)

@@ -1,0 +1,135 @@
+# Candidate Profile API 
+
+The Candidate API provides full CRUD operations, secure CV/URS file handling through AWS S3, AI resume parsing, and Deep Search capabilities. It also exposes communication endpoints (emails), pre-screening routes, and campaign-linked screening workflows.
+
+# **API Endpoint Overview Table**
+
+### **Candidate CRUD**
+
+| Category | Endpoint                       | Purpose                             |
+| :------- | :----------------------------- | :---------------------------------- |
+| CRUD     | **GET /api/candidates**        | Fetch list with pagination + search |
+| CRUD     | **POST /api/candidates**       | Create candidate + upload CV/photo  |
+| CRUD     | **GET /api/candidates/:id**    | View full candidate profile         |
+| CRUD     | **PUT /api/candidates/:id**    | Edit candidate information          |
+| CRUD     | **DELETE /api/candidates/:id** | Delete candidate                    |
+
+### **CV & Resume Handling**
+
+| Category   | Endpoint                              | Purpose                         |
+| :--------- | :------------------------------------ | :------------------------------ |
+| CV         | **POST /api/candidates/:id/cv**       | Upload CV to S3                 |
+| CV         | **GET /api/candidates/:id/cv-link**   | Secure pre-signed download link |
+| CV         | **GET /api/candidates/:id/cv-view**   | Inline PDF viewer               |
+| CV         | **DELETE /api/candidates/:id/cv-s3**  | Remove CV from S3               |
+| CV Parsing | **POST /api/candidates/parse-resume** | AI resume parsing for auto-fill |
+
+### **URS (Universal Resume Schema)**
+
+| Category      | Endpoint                                | Purpose                     |
+| :------------ | :-------------------------------------- | :-------------------------- |
+| URS           | **GET /api/candidates/:id/urs-link**    | Pre-signed URL for URS JSON |
+| URS           | **GET /api/candidates/:id/urs**         | Fetch raw URS payload       |
+| URS           | **GET /api/candidates/:id/urs-view**    | View URS in HTML format     |
+| Deep Research | **GET /api/candidates/:id/deep-search** | AI insights on URS          |
+
+### **Email & Communication**
+
+| Category | Endpoint                                             | Purpose                   |
+| :------- | :--------------------------------------------------- | :------------------------ |
+| Emails   | **POST /api/candidates/send-confirmation-email**     | Send representation email |
+| Emails   | **POST /api/candidates/send-shortlist-notification** | Notify after shortlisting |
+| Emails   | **GET /api/candidates/email-status**                 | Check delivery status     |
+| Emails   | **POST /api/candidates/test-email**                  | SMTP test route           |
+
+## API Endpoints 
+
+## **List all candidates**
+
+```
+GET /api/candidates
+Access: candidate_tracker:read
+```
+
+## **Create candidate**
+
+```
+POST /api/candidates
+Access: candidate_tracker:create
+```
+
+## **View candidate**
+
+```
+GET /api/candidates/:id
+Access: candidate_profile:read
+```
+
+## **Edit candidate**
+
+```
+PUT /api/candidates/:id
+Access: candidate_profile:update
+```
+
+## **Delete candidate**
+
+```
+DELETE /api/candidates/:id
+Access: candidate_profile:delete
+```
+
+## **CV & Resume Handling**
+
+## **Upload CV to S3**
+
+```
+POST /api/candidates/:id/cv
+```
+
+## **Pre-signed CV download**
+
+```
+GET /api/candidates/:id/cv-link
+```
+
+## **Inline CV view**
+
+```
+GET /api/candidates/:id/cv-view
+```
+
+## **Remove CV reference**
+
+```
+DELETE /api/candidates/:id/cv-s3
+```
+
+## **URS + Deep Research**
+
+## **View/Download URS**
+
+```
+GET /api/candidates/:id/urs-link
+```
+
+## **Fetch raw URS JSON**
+
+```
+GET /api/candidates/:id/urs
+```
+
+## **AI Deep Search**
+
+```
+GET /api/candidates/:id/deep-search
+```
+
+## **Email & Communication**
+
+```
+POST /api/candidates/send-confirmation-email
+POST /api/candidates/send-shortlist-notification
+POST /api/candidates/test-email
+GET  /api/candidates/email-status
+```

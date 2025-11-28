@@ -1,0 +1,72 @@
+# Recruitment Campaign API
+
+The Recruitment Campaign API manages the complete lifecycle of hiring campaigns — including creation, updating, viewing, deleting and fetching statistics. It also connects campaigns with candidate workflows such as screening, pre-screening forms, interview notes, and client notes. This API acts as the central hub that links profiles, candidates, interviews, and evaluation processes across the RMS.
+
+## Endpoints Overview
+
+| **Endpoint**           | **Method** | **Description**         | **Access**        |
+| :--------------------- | :--------- | :---------------------- | :---------------- |
+| `/api/campaigns`       | GET        | Get all campaigns       | `campaign:read`   |
+| `/api/campaigns/stats` | GET        | Get campaign statistics | `campaign:read`   |
+| `/api/campaigns/:id`   | GET        | Get a specific campaign | `campaign:read`   |
+| `/api/campaigns`       | POST       | Create a new campaign   | `campaign:create` |
+| `/api/campaigns/:id`   | PUT        | Update campaign details | `campaign:update` |
+| `/api/campaigns/:id`   | DELETE     | Delete a campaign       | `campaign:delete` |
+
+## Detailed API Endpoints 
+
+## **GET /api/campaigns**
+
+Fetch all campaigns.
+
+```
+GET /api/campaigns
+Access: campaign:read
+```
+
+## **GET /api/campaigns/stats**
+
+Retrieve aggregated metrics for dashboards.
+
+```
+GET /api/campaigns/stats
+Access: campaign:read
+```
+
+## **GET /api/campaigns/:id**
+
+Get a single campaign with all details.
+
+```
+GET /api/campaigns/:id
+Access: campaign:read
+```
+
+## **POST /api/campaigns**
+
+Create a new recruitment campaign.
+
+```
+POST /api/campaigns
+Access: campaign:create
+Validation: validateCampaign
+```
+
+## **PUT /api/campaigns/:id**
+
+Update an existing campaign.
+
+```
+PUT /api/campaigns/:id
+Access: campaign:update
+Validation: validateCampaign
+```
+
+## **DELETE /api/campaigns/:id**
+
+Delete campaign by ID.
+
+```
+DELETE /api/campaigns/:id
+Access: campaign:delete
+```

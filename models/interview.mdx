@@ -1,0 +1,55 @@
+# Interview Schedule 
+
+The **Interview Schedule module** lets recruiters **plan, manage, and track interviews** for shortlisted candidates.\
+It handles creating interview slots, notifying candidates/interviewers, adding interview notes, and updating the candidate’s stage (L1/L2).\
+This module acts as the **time-based workflow hub** for all interviews in the recruitment pipeline.
+
+## **Interview Model Description**
+
+The **Interview model** represents an interview event scheduled for a specific candidate within a campaign.\
+It stores details like interviewer, candidate, schedule time, meeting link, notes, AI transcript, and status.
+
+## Fields 
+
+| Field                   | Type     | Description                                               |
+| :---------------------- | :------- | :-------------------------------------------------------- |
+| `campaignId`            | ObjectId | Linked recruitment campaign                               |
+| `campaignName`          | String   | Display name of campaign                                  |
+| `candidateId`           | ObjectId | Candidate attending the interview                         |
+| `candidateName`         | String   | Display name of candidate                                 |
+| `candidateEmail`        | String   | Candidate email                                           |
+| `interviewer`           | String   | Interviewer full name (human or AI Interviewer)           |
+| `interviewerEmail`      | String   | Email of interviewer                                      |
+| `scheduleName`          | String   | Title of the interview (ex: “L1 Interview – Arjun Mehta”) |
+| `scheduledAt`           | Date     | Date & time of interview                                  |
+| `mode`                  | String   | In-person / Online / Phone                                |
+| `location`              | String   | Location or meeting link                                  |
+| `meetingLink`           | String   | Online meeting URL                                        |
+| `notes`                 | String   | Interview notes added by recruiter                        |
+| `status`                | String   | Scheduled / Pending / Completed / Cancelled               |
+| **AI Fields**           |          |                                                           |
+| `aiTranscript`          | String   | AI-generated transcript (if AI Interviewer)               |
+| `aiSummary`             | String   | AI summary of interview                                   |
+| `aiRatings`             | Object   | Optional AI evaluation ratings                            |
+| `aiActionPoints`        | Array    | AI recommended action points                              |
+| `emailNotificationSent` | Boolean  | Whether email invitation was sent                         |
+
+## **Purpose of the Interview Schedule Page**
+
+The Interview Schedule page is designed to:
+
+- Create and manage interviews for shortlisted candidates
+- Track interview status: **Scheduled → Pending → Completed**
+- Notify candidates/interviewers via email (calendar invites included)
+- Capture interview notes
+- Progress candidates to the next round (Select → L1/L2 Complete)
+- Reject candidates after interview (with auto-email)
+- Provide a central calendar-style view of all interviews across campaigns
+
+It complements the **Candidate Tracker** by handling the **time-specific** part of the recruitment process.
+
+## Summary 
+
+The **Interview model** stores all information required to schedule and manage interviews for shortlisted candidates.\
+It captures the interview timing, interviewer & candidate details, meeting link, notes, and status updates (Scheduled, Pending, Completed).\
+It also supports AI Interviews through transcripts, summaries, and evaluation fields.
