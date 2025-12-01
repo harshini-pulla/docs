@@ -1,145 +1,181 @@
 ---
-title: Coffee RMS Documentation
-description: Official documentation for Coffee RMS – recruitment workflows, automation, JD management, interviews, and more.
+title: "Coffee RMS Documentation"
+description: "Official documentation for Coffee RMS – recruitment workflows, automation, JD management, interviews, and more."
 ---
 
-import { Card, Cards } from "components";
+# **📘 CoffeeRMS Documentation**
 
-# ☕ **Coffee RMS Documentation**
-Welcome to **Coffee RMS**, your end-to-end recruitment management platform.  
-Explore modules, workflows, and integrations that help you automate hiring efficiently.
+Welcome to **CoffeeRMS** — an end-to-end **AI-powered Recruitment Management System** designed to streamline hiring, automate workflows, and offer a unified experience for HR teams, recruiters, and interviewers.
 
----
+## 🌟 Quickstart Overview
 
-## 🚀 Get Started
+### **Core Modules**
 
-<Cards>
-  <Card
-    title="Introduction"
-    icon="📘"
-    href="/introduction"
-    description="Overview of Coffee RMS and key concepts."
-  />
+- **🚀 Get Started** — Set up organization, roles, users, permissions
+- **📄 Job Description (JD)** — Create role descriptions
+- **🧩 Profile Articulation** — Define ideal candidate persona
+- **🎯 Recruitment Campaigns** — Manage hiring projects
+- **👤 Candidate Profiles** — Store candidate data, CV, URS
+- **📅 Interview Schedule** — Plan L1/L2 interviews
+- **📢 Social Media Content** — AI-generated job posts
+- **📚 Category Management** — Category → Sub Category → Sub Sub Category
+- **🧠 AI Modules** — Resume Parsing, Deep Search, AI Interview
 
-  <Card
-    title="Quickstart"
-    icon="⚡"
-    href="/quickstart"
-    description="Your first 5 minutes with Coffee RMS."
-  />
+# ⚙️ System Overview
 
-  <Card
-    title="API Reference"
-    icon="🔌"
-    href="/api"
-    description="Endpoints, authentication, and examples."
-  />
-</Cards>
+CoffeeRMS is divided into **4 layers**:
 
----
+## **1️⃣ Settings & Master Data**
 
-## 📂 Core Workflows
+### **🏢 Organization**
 
-<Cards>
-  <Card
-    title="JD Management"
-    href="/workflows/jd-management"
-    icon="📝"
-    description="Create, edit, publish, and track job descriptions."
-  />
+Workspace identity, branding & setup.
 
-  <Card
-    title="Profile Articulation"
-    href="/workflows/profile-articulation-management"
-    icon="👤"
-    description="Define candidate persona, sourcing strategy, and hiring quantity."
-  />
+### **👥 Users & RBAC**
 
-  <Card
-    title="Social Media Content"
-    href="/workflows/social-media-content"
-    icon="📣"
-    description="Generate, schedule, approve, and publish AI-driven job posts."
-  />
+Role-based permissions to control access.
 
-  <Card
-    title="Applications Management"
-    href="/workflows/applications-management"
-    icon="📄"
-    description="Track, filter, and process candidate applications."
-  />
+### **📂 Category Management**
 
-  <Card
-    title="AI Interview"
-    href="/ai-interview"
-    icon="🤖"
-    description="Generate AI interview questions based on JD and profile data."
-  />
+Three-level taxonomy used across JD & Profiles:
 
-  <Card
-    title="Reports & Dashboard"
-    href="/dashboard"
-    icon="📊"
-    description="Analytics for job performance, hiring progress, and sourcing."
-  />
-</Cards>
+- Categories
+- Sub-Categories
+- Sub-Sub Categories
 
----
+### **🏭 Target Company Master**
 
-## 📽️ Product Demo
+Strategic companies mapped to Sub-Sub Categories.
 
-<video controls width="100%">
-  <source src="/videos/intro.mp4" type="video/mp4" />
-  Your browser does not support the video tag.
-</video>
+### **💼 Position Master**
 
----
+Standardized job titles used in Profiles & Campaigns.
 
-## 🔧 System Components
+## **2️⃣ Hiring Workflow Modules**
 
-<Cards>
-  <Card
-    title="Company Management"
-    href="/modules/company"
-    icon="🏢"
-    description="Manage employer accounts, roles, and permissions."
-  />
+### **📝 JD Creation**
 
-  <Card
-    title="Target Company Master"
-    href="/modules/target-company"
-    icon="🎯"
-    description="Sourcing target setup for profile articulation."
-  />
+Define job descriptions with:
 
-  <Card
-    title="User Roles & Permissions"
-    href="/modules/rbac"
-    icon="🔐"
-    description="Role-based access control across RMS."
-  />
-</Cards>
+- Responsibilities
+- Requirements
+- Skills
+- Priority
 
----
+### **🎭 Profile Articulation**
 
-## ⭐ Key Features
+Create the **ideal candidate profile**:
 
-### ✔ Job creation & publishing  
-### ✔ Candidate sourcing strategy  
-### ✔ Auto-generated AI content  
-### ✔ Advanced filtering & search  
-### ✔ AI-powered interviews  
-### ✔ End-to-end analytics  
-### ✔ RBAC-protected APIs  
-### ✔ Multi-company support  
+- Experience
+- Salary range
+- Target companies
+- Priority & status
 
----
+### **🎯 Recruitment Campaigns**
 
-## 📘 Need Help?
+Manage a hiring project:
 
-- **Support team:** support@coffeerms.com  
-- **GitHub repo:** https://github.com/coffeerms  
-- **Changelog:** /changelog  
+- Linked Profile Articulation
+- Salary & budget
+- Timeline
+- Assigned recruiters
+- Candidate pipeline
 
-> Coffee RMS helps you run hiring operations faster, smarter, and with complete automation.
+### **👤 Candidate Profile**
 
+Candidate’s master record:
+
+- CV
+- URS JSON
+- Deep Search
+- Status & stages
+- Personal & professional details
+- Pre-screening summary
+- Email communication
+
+### **📊 Candidate Tracker**
+
+Inside campaigns:
+
+- Pre-screening responses
+- L1 & L2 notes
+- AI transcripts
+- Client notes
+- Verification notes
+
+### **📅 Interview Schedule**
+
+Create and manage interviews:
+
+- L1 / L2
+- Interviewer assignment
+- Meeting links
+- Calendar invite
+- Notes
+- Reject / Select flow
+
+## **3️⃣ AI Engine**
+
+### **🧠 Resume Parsing (URS)**
+
+Convert CV → normalized JSON.
+
+### **🔎 Deep Research AI**
+
+AI insights from URS:
+
+- Summary
+- Projects
+- Social signals
+
+### **🤖 AI Interview**
+
+AI transcript\
+AI evaluation\
+AI scorecard
+
+## **4️⃣ Marketing & Outreach**
+
+### **📢 Social Media Content**
+
+AI-powered job posts for:
+
+- LinkedIn
+- Instagram
+- YouTube Shorts
+
+Generates:
+
+- Hook
+- Job summary
+- Hashtags
+- Visual suggestions
+
+# 🧭 Full Navigation Map
+
+## **Settings**
+
+- /organization
+- /users
+- /category-management
+- /target-company
+- /position-master
+
+## **Core Hiring**
+
+- /job-description
+- /profile-articulation
+- /campaign
+- /candidate-profile
+- /candidate-tracker
+- /interview-schedule
+
+## **Marketing**
+
+- /social-media-content
+
+## **AI Modules**
+
+- /urs
+- /deep-search
+- /ai-interview
