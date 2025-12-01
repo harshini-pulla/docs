@@ -8,81 +8,126 @@
     "dark": "#15803D"
   },
   "favicon": "/favicon.svg",
-  "navigation": {
-    "tabs": [
-      {
-        "tab": "Guides",
-        "groups": [
-          {
-            "group": "Getting started",
-            "pages": [
-              "index",
-              "quickstart",
-              "development"
-            ]
-          },
-          {
-            "group": "Customization",
-            "pages": [
-              "essentials/settings",
-              "essentials/navigation"
-            ]
-          },
-          {
-            "group": "Writing content",
-            "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/reusable-snippets"
-            ]
-          },
-          {
-            "group": "AI tools",
-            "pages": [
-              "ai-tools/cursor",
-              "ai-tools/claude-code",
-              "ai-tools/windsurf"
-            ]
-          }
-        ]
-      },
-      {
-        "tab": "API reference",
-        "groups": [
-          {
-            "group": "API documentation",
-            "pages": [
-              "api-reference/introduction"
-            ]
-          },
-          {
-            "group": "Endpoint examples",
-            "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
-            ]
-          }
-        ]
-      }
-    ],
-    "global": {
-      "anchors": [
+"navigation": {
+  "tabs": [
+    {
+      "tab": "Guides",
+      "groups": [
         {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
+          "group": "Getting started",
+          "pages": [
+            "index",
+            "quickstart",
+            "development"
+          ]
         },
         {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
+          "group": "Customization",
+          "pages": [
+            "essentials/settings",
+            "essentials/navigation"
+          ]
+        },
+        {
+          "group": "Writing content",
+          "pages": [
+            "essentials/markdown",
+            "essentials/code",
+            "essentials/images",
+            "essentials/reusable-snippets"
+          ]
+        }
+      ]
+    },
+
+    {
+      "tab": "Models",
+      "groups": [
+        {
+          "group": "Model Definitions",
+          "pages": [
+            "models/campaign",
+            "models/candidate-tracker",
+            "models/candidate",
+            "models/category",
+            "models/client",
+            "models/interview",
+            "models/jd",
+            "models/organization",
+            "models/position-master",
+            "models/profile-articulation",
+            "models/social-media",
+            "models/target-company",
+            "models/user"
+          ]
+        }
+      ]
+    },
+
+    {
+      "tab": "Workflows",
+      "groups": [
+        {
+          "group": "Process Flows",
+          "pages": [
+            "workflows/campaign-management",
+            "workflows/candidate-management",
+            "workflows/candidate-tracker-management",
+            "workflows/category-management",
+            "workflows/client-management",
+            "workflows/interview-management",
+            "workflows/jd-management",
+            "workflows/organization-management",
+            "workflows/position-master-management",
+            "workflows/profile-articulation-management",
+            "workflows/social-media-management",
+            "workflows/target-company-management",
+            "workflows/user-management"
+          ]
+        }
+      ]
+    },
+
+    {
+      "tab": "APIs",
+      "groups": [
+        {
+          "group": "All API Endpoints",
+          "pages": [
+            "apis/campaign",
+            "apis/candidate-tracker",
+            "apis/candidate",
+            "apis/category",
+            "apis/client",
+            "apis/interview",
+            "apis/jd",
+            "apis/organization",
+            "apis/position-master",
+            "apis/profile-articulation",
+            "apis/social-media",
+            "apis/target-company",
+            "apis/user"
+          ]
         }
       ]
     }
-  },
+  ],
+
+  "global": {
+    "anchors": [
+      {
+        "anchor": "Documentation",
+        "href": "https://mintlify.com/docs",
+        "icon": "book-open-cover"
+      },
+      {
+        "anchor": "Blog",
+        "href": "https://mintlify.com/blog",
+        "icon": "newspaper"
+      }
+    ]
+  }
+},
   "logo": {
     "light": "/logo/light.svg",
     "dark": "/logo/dark.svg"
