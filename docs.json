@@ -99,8 +99,8 @@
   }
 },
   "logo": {
-    "light": "/logo/coffee-rms-logo.svg",
-    "dark": "/logo/coffee-rms-logo.svg"
+    "light": "/logo/coffee-rms-logo-1.svg",
+    "dark": "/logo/coffee-rms-logo-1.svg"
   },
   "navbar": {
     "links": [
