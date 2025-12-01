@@ -11,36 +11,6 @@
 "navigation": {
   "tabs": [
     {
-      "tab": "Guides",
-      "groups": [
-        {
-          "group": "Getting started",
-          "pages": [
-            "index",
-            "quickstart",
-            "development"
-          ]
-        },
-        {
-          "group": "Customization",
-          "pages": [
-            "essentials/settings",
-            "essentials/navigation"
-          ]
-        },
-        {
-          "group": "Writing content",
-          "pages": [
-            "essentials/markdown",
-            "essentials/code",
-            "essentials/images",
-            "essentials/reusable-snippets"
-          ]
-        }
-      ]
-    },
-
-    {
       "tab": "Models",
       "groups": [
         {
@@ -127,7 +97,8 @@
       }
     ]
   }
-},
+}
+,
   "logo": {
     "light": "/logo/light.svg",
     "dark": "/logo/dark.svg"
