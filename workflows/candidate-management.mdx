@@ -4,118 +4,103 @@ The Candidate Profile module manages every candidate’s complete information—
 It acts as the **central hub** for candidate data before they enter a Recruitment Campaign pipeline.\
 Once a candidate is shortlisted, they move into the **Candidate Tracker**, where all hiring stages occur.
 
-![Screenshot 2025-11-28 154415.png](/images/Screenshot2025-11-28154415.png)
+<video controls width="800">
+  <source src="https://github.com/harshini-pulla/docs/blob/main/public/videos/candidate%20profile.mp4?raw=true" type="video/mp4" />
+  Your browser does not support the video tag.
+</video>
 
-## Workflow 
+## **Workflow Overview**
 
 The Candidate Profile workflow covers **everything from creation → screening → pipeline movement**, ensuring recruiters have complete control over the candidate’s lifecycle.
 
-### **Candidate Creation**
+## **Candidate Creation**
 
-A recruiter starts by selecting a Recruitment Campaign and then filling in:
+- Select a Recruitment Campaign
+- Fill in:
+  - Personal details: name, email, phone, location
+  - Professional information: skills, experience, expected salary
+  - Resume upload (PDF/DOC/DOCX/TXT)
+  - Optional: automatic resume parsing
+  - Social links & employment history
+  - Profile picture (optional)
+- Save → Candidate appears in the global pool under **Candidate Profile**
 
-- Personal details: name, email, phone, location
-- Professional information: skills, experience, expected salary
-- Resume upload (PDF/DOC/DOCX/TXT)
-- Automatic resume parsing (optional)
-- Social links & employment history
-- Profile picture (optional)
+## **Candidate Viewing (Detailed Dashboard)**
 
-After saving, the candidate becomes part of the global pool visible under **Candidate Profile**.
-
-### **Candidate Viewing (Detailed Dashboard View)**
-
-Clicking a candidate opens a complete 360° view:
-
-- Contact & personal info
-- Professional info (skills, experience, salary)
-- Application timeline
-- Resume information (View / Download)
-- Universal Resume Schema (URS) & Deep Research AI insights
-- Social profiles
-- Employment history
-
-From this page, recruiters can:
-
-- Preview or download resume
-- Open Deep Research
-- Shortlist into a campaign
-- Edit details
-- Delete candidate
-
-### **Candidate Editing**
-
-Recruiters may update:
-
-- Contact details
-- Professional info
-- Resume upload (re-upload allowed)
-- Status (Application → Shortlisted → Interview → Rejected, etc.)
-- Confirmation email status
-- Campaign association
-
-The system ensures RBAC-based permissions for all edits.
+- Click a candidate to see 360° view:
+  - Contact & personal info
+  - Professional info (skills, experience, salary)
+  - Application timeline
+  - Resume information (View / Download)
+  - Universal Resume Schema (URS) & Deep Research AI insights
+  - Social profiles
+  - Employment history
+- Actions available:
+  - Preview/download resume
+  - Open Deep Research
+  - Shortlist into a campaign
+  - Edit details
+  - Delete candidate
 
 ![Screenshot 2025-11-28 154517.png](/images/Screenshot2025-11-28154517.png)
 
-### **Candidate Shortlisting**
+## **Candidate Editing**
 
-Shortlisting is the crucial turning point of the workflow:
+- Update contact or professional info
+- Re-upload resume (if needed)
+- Change status (Application → Shortlisted → Interview → Rejected)
+- Update confirmation email status
+- Modify campaign association
+- RBAC ensures only permitted roles can edit
 
-When a recruiter clicks **Shortlist**:
+## **Candidate Shortlisting**
 
-- The candidate is attached to the selected Recruitment Campaign
-- The candidate instantly appears inside that **Campaign's Candidate Tracker**
-- All next processes occur _inside the Campaign Tracker_:
-  - Pre-screening form responses
-  - CV improvements
-  - L1 & L2 Interview Notes
-  - AI Transcript insights
-  - Employment gap analysis
-  - Document & certificate verification
-  - Client notes
-  - Offer or rejection handling
-
-This bridges **Candidate Profile → Recruitment Campaign workflow**.
+- Click **Shortlist**
+  - Candidate is attached to selected Recruitment Campaign
+  - Candidate appears inside **Campaign's Candidate Tracker**
+  - Next steps occur inside Campaign Tracker:
+    - Pre-screening form responses
+    - CV improvements
+    - L1 & L2 Interview Notes
+    - AI Transcript insights
+    - Employment gap analysis
+    - Document & certificate verification
+    - Client notes
+    - Offer or rejection handling
 
 ![Screenshot 2025-11-28 154547.png](/images/Screenshot2025-11-28154547.png)
 
-### **Candidate Deletion**
+## **Candidate Deletion**
 
-Deleting removes:
-
-- Candidate profile
-- CV reference
-- URS reference
-- Campaign linkage
-- Associated S3 file keys (if enabled)
-
-Only permitted roles can delete candidates.
+- Click **Delete**
+- Confirm deletion
+- Removes:
+  - Candidate profile
+  - CV reference
+  - URS reference
+  - Campaign linkage
+  - S3 file keys (if enabled)
 
 ![Screenshot 2025-11-28 154719.png](/images/Screenshot2025-11-28154719.png)
 
-## **Search & Filter Behavior**
+## **Search & Filter**
 
-The Candidate Profile page includes a powerful search bar:
+**Searchable by:**
 
-### **You can search by:**
-
-- Candidate name
-- Email
-- Phone
+- Candidate name, email, phone
 - Skills
 - Campaign name
 - Status (Shortlisted, Rejected, etc.)
 - JD/role code
 - Experience keywords
 
-Search is **client-side filtered**, applied on top of the fetched candidate list.
+Search is **client-side filtered**, applied on the fetched candidate list.
 
 ![Screenshot 2025-11-28 154836.png](/images/Screenshot2025-11-28154836.png)
 
-## Summary 
+## **Summary**
 
-The Candidate Profile module serves as the **master record** for every applicant in the RMS.\
-It allows recruiters to create, update, validate, and manage all candidate information in one place.\
-After shortlisting, candidates move into the **Candidate Tracker**, where screening, interviews, verification, and client reviews occur.\
-This module ensures a clean separation between **candidate data storage** and **campaign hiring workflow**, making the entire system scalable, trackable, and easy for recruiters to manage.
+The Candidate Profile module is the **master record** for every applicant in the RMS.  
+It allows recruiters to create, update, validate, and manage candidate information in one place.  
+After shortlisting, candidates move into **Candidate Tracker** for screening, interviews, verification, and client review.  
+It ensures a clean separation between **candidate data storage** and **campaign hiring workflow**, making the system scalable, trackable, and easy for recruiters to manage.
