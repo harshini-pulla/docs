@@ -16,19 +16,19 @@
         {
           "group": "Model Definitions",
           "pages": [
-            "models/campaign",
-            "models/candidate-tracker",
-            "models/candidate",
+            "models/organization",
+            "models/user",
             "models/category",
             "models/client",
-            "models/interview",
-            "models/jd",
-            "models/organization",
+            "models/target-company",
             "models/position-master",
+            "models/jd",
             "models/profile-articulation",
             "models/social-media",
-            "models/target-company",
-            "models/user"
+            "models/campaign",
+            "models/candidate",
+            "models/candidate-tracker",
+            "models/interview"
           ]
         }
       ]
@@ -40,19 +40,19 @@
         {
           "group": "Process Flows",
           "pages": [
+            "workflows/organization-management",
+            "workflows/user-management",
+            "workflows/category-management",
+            "workflows/client-management",
+            "workflows/target-company-management",
+            "workflows/position-master-management",
+            "workflows/jd-management",
+            "workflows/profile-articulation-management",
+            "workflows/social-media-management",
             "workflows/campaign-management",
             "workflows/candidate-management",
             "workflows/candidate-tracker-management",
-            "workflows/category-management",
-            "workflows/client-management",
-            "workflows/interview-management",
-            "workflows/jd-management",
-            "workflows/organization-management",
-            "workflows/position-master-management",
-            "workflows/profile-articulation-management",
-            "workflows/social-media-management",
-            "workflows/target-company-management",
-            "workflows/user-management"
+            "workflows/interview-management"
           ]
         }
       ]
@@ -64,19 +64,19 @@
         {
           "group": "All API Endpoints",
           "pages": [
-            "apis/campaign",
-            "apis/candidate-tracker",
-            "apis/candidate",
+            "apis/organization",
+            "apis/user",
             "apis/category",
             "apis/client",
-            "apis/interview",
-            "apis/jd",
-            "apis/organization",
+            "apis/target-company",
             "apis/position-master",
+            "apis/jd",
             "apis/profile-articulation",
             "apis/social-media",
-            "apis/target-company",
-            "apis/user"
+            "apis/campaign",
+            "apis/candidate",
+            "apis/candidate-tracker",
+            "apis/interview"
           ]
         }
       ]
@@ -97,8 +97,7 @@
       }
     ]
   }
-}
-,
+},
   "logo": {
     "light": "/logo/light.svg",
     "dark": "/logo/dark.svg"
