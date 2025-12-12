@@ -10,19 +10,20 @@ Every activity in RMS (candidate screening, pre-screening forms, interviews, ver
 
 ### **Fields**
 
-| Field                       | Type     | Description                                           |
-| :-------------------------- | :------- | :---------------------------------------------------- |
-| **\_id**                    | ObjectId | Unique campaign identifier                            |
-| **name**                    | String   | Campaign name (e.g., Senior Backend Developer Hiring) |
-| **profileArticulationId**   | ObjectId | Linked profile articulation                           |
-| **profileArticulationName** | String   | Display name of profile                               |
-| **companyName**             | String   | Client company                                        |
-| **companyEmail**            | String   | Client email                                          |
-| **status**                  | String   | Planning / Active / On Hold / Completed / Cancelled   |
-| **startDate**               | Date     | Campaign start                                        |
-| **endDate**                 | Date     | Campaign end                                          |
-| **salaryOffered**           | Object   | Min/Max salary + currency                             |
-| **budget (vendorRate)**     | Object   | Vendor commercial rate                                |
+| Field                       | Type     | Description                                                                                          |
+| :-------------------------- | :------- | :--------------------------------------------------------------------------------------------------- |
+| **\_id**                    | ObjectId | Unique campaign identifier                                                                           |
+| **name**                    | String   | Campaign name (e.g., Senior Backend Developer Hiring)                                                |
+| **profileArticulationId**   | ObjectId | Linked profile articulation                                                                          |
+| **profileArticulationName** | String   | Display name of profile                                                                              |
+| **companyName**             | String   | Client company                                                                                       |
+| **companyEmail**            | String   | Client email                                                                                         |
+| **status**                  | String   | Planning / Active / On Hold / Completed / Cancelled                                                  |
+| **startDate**               | Date     | Campaign start                                                                                       |
+| **endDate**                 | Date     | Campaign end                                                                                         |
+| **salaryOffered**           | Object   | Min/Max salary + currency                                                                            |
+| **budget (vendorRate)**     | Object   | Vendor commercial rate                                                                               |
+| **publicApplyToken**        | String   | Secure random token generated automatically when a campaign is created; used to build the public URL |
 
 ## **Field-Level Explanation**
 
@@ -50,24 +51,40 @@ Every activity in RMS (candidate screening, pre-screening forms, interviews, ver
 
 - Commercial budget charged to the client
 
-## Purpose
+## **Public Candidate Application**
 
-The module helps:
+This is a key new enhancement.
 
-- Create organized hiring pipelines for clients
-- Track all candidates for a specific role
-- Manage screening → verification → interviews → client submissions
-- Store hiring timelines, status, salary range, vendor budget
-- Connect JD, Profile Articulation, Candidates, and Interviews into one workflow
+### What it provides:
+
+- Auto-generated public job application link
+- Candidates can apply on their own
+- Their submission becomes a new candidate entry under this campaign
+- No recruiter action required to create candidates
+- Perfect for mass hiring or job board postings
+
+## **Purpose**
+
+The Recruitment Campaign module helps:
+
+- Create organized, role-specific hiring pipelines
+- Track all candidates linked to a job opening
+- Manage complete workflow → **screening → verification → interviews → client submission**
+- Store hiring requirements, timelines, salary data, vendor budgets
+- Connect JD, Profile Articulation, Candidates, Interview Notes, and Client Notes
+- Enable self-service candidate applications through public links
 
 It is the **central entry point** of the recruitment workflow.
 
-## Summary
+## **Summary**
 
-Recruitment Campaign module helps your team:
+The Recruitment Campaign module allows your recruitment team to:
 
-- Define hiring requirements for each client
-- Track candidate stages (screening → interview → verification)
-- Manage pre-screening forms, AI interviews, CV edits
-- Collaborate with recruitment teams
-- Generate data for dashboards, analytics, and reporting
+- Define hiring requirements per client
+- Track candidates across stages (screening, interview, verification)
+- Automate pre-screening forms and AI interviews
+- Manage recruiter collaboration
+- Generate analytics and reporting
+- Accept **public applications** directly into campaigns through secure URLs
+
+With the newly added **Public Apply Token**, RMS now supports seamless candidate-driven applications, enabling scalable, automated hiring workflows without manual candidate creation.

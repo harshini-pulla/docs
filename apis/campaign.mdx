@@ -4,16 +4,17 @@ The Recruitment Campaign API manages the complete lifecycle of hiring campaigns 
 
 ## Endpoints Overview
 
-| **Endpoint**           | **Method** | **Description**         | **Access**        |
-| :--------------------- | :--------- | :---------------------- | :---------------- |
-| `/api/campaigns`       | GET        | Get all campaigns       | `campaign:read`   |
-| `/api/campaigns/stats` | GET        | Get campaign statistics | `campaign:read`   |
-| `/api/campaigns/:id`   | GET        | Get a specific campaign | `campaign:read`   |
-| `/api/campaigns`       | POST       | Create a new campaign   | `campaign:create` |
-| `/api/campaigns/:id`   | PUT        | Update campaign details | `campaign:update` |
-| `/api/campaigns/:id`   | DELETE     | Delete a campaign       | `campaign:delete` |
+| **Endpoint**           | **Method** | **Description**                                            | **Access**        |
+| :--------------------- | :--------- | :--------------------------------------------------------- | :---------------- |
+| `/api/campaigns`       | GET        | Get all campaigns                                          | `campaign:read`   |
+| `/api/campaigns/stats` | GET        | Get campaign statistics                                    | `campaign:read`   |
+| `/api/campaigns/:id`   | GET        | Get a specific campaign                                    | `campaign:read`   |
+| `/api/campaigns`       | POST       | Create a new campaign                                      | `campaign:create` |
+| `/api/campaigns/:id`   | PUT        | Update campaign details                                    | `campaign:update` |
+| `/api/campaigns/:id`   | DELETE     | Delete a campaign                                          | `campaign:delete` |
+| `/api/campaigns/:id`   | GET        | Get the public candidate application URL for this campaign | `campaign:read`   |
 
-## Detailed API Endpoints 
+## Detailed API Endpoints
 
 ## **GET /api/campaigns**
 
@@ -69,4 +70,20 @@ Delete campaign by ID.
 ```
 DELETE /api/campaigns/:id
 Access: campaign:delete
+```
+
+## GET /api/campaigns/:id/public-link
+
+Returns the **public candidate self-application URL** generated using the campaign’s secure `publicApplyToken`.
+
+**Access:** `campaign:read`
+
+```
+{
+  "success": true,
+  "data": {
+    "campaignId": "679aa3fa2150442ce4c34435",
+    "publicApplyUrl": "https://yourdomain.com/apply/6e9cf1a0bde2"
+  }
+}
 ```
