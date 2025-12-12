@@ -10,60 +10,94 @@ It supports unlimited levels to organize job roles clearly across the RMS.
 
 Used by JD Creation, Candidate Profiles, and Profile Articulation.
 
-## Fields
+## **Fields**
 
-| Field       | Type   | Description                                    |
-| :---------- | :----- | :--------------------------------------------- |
-| name        | String | Category name (e.g., “Information Technology”) |
-| description | String | What this category covers                      |
-| status      | String | “active” or “inactive”                         |
-| createdAt   | Date   | Timestamp                                      |
-| updatedAt   | Date   | Timestamp                                      |
+| Field             | Type                 | Description                                                                                |
+| :---------------- | :------------------- | :----------------------------------------------------------------------------------------- |
+| **name**          | String               | Category name (e.g., "Health & Safety", "Engineering")                                     |
+| **status**        | String               | `"active"` or `"inactive"`                                                                 |
+| **description**   | String               | High-level description of what this category covers                                        |
+| **subCategories** | Array\<SubCategory\> | List of Sub Categories                                                                     |
+| **ddimMetadata**  | DDIMMetadata         | Mapping to DDIM-AI framework for interviews, competency assessment, and knowledge universe |
 
-## Sub Categories
+##  **Sub Category Model **
 
-Each Category can have **N number of sub-categories**.
+This now includes **role purpose, responsibilities, coverage, standards, KPIs, competencies, and DDIM-AI knowledge levels**.
 
-### Sub Category Fields
+| Field                       | Type                          | Description                                   |
+| :-------------------------- | :---------------------------- | :-------------------------------------------- |
+| **name**                    | String                        | Sub Category name (e.g., “HSE Officer”)       |
+| **description**             | String                        | Description of the role cluster               |
+| **totalExperience**         | String                        | Required experience (e.g., “2–5 years”)       |
+| **primaryObjective**        | String                        | The main purpose of this subcategory role     |
+| **coreResponsibilities**    | Array\<String\>               | Key responsibilities                          |
+| **coverageAreas**           | Array\<String\>               | Areas like Excavation, Confined Space, etc.   |
+| **interfaces**              | Array\<String\>               | Stakeholder interactions                      |
+| **competenceRequirements**  | Array\<String\>               | DDIM / domain competences                     |
+| **preferredCertifications** | Array\<String\>               | NEBOSH, IOSH, OSHA, etc.                      |
+| **keyStandards**            | Array\<String\>               | ISO 45001, OSHA 1910, NFPA, etc.              |
+| **kpis**                    | Array\<String\>               | Performance KPIs                              |
+| **subSubCategories**        | Array\<SubSubCategory\>       | Nested specialization                         |
+| **knowledgeUniverse**       | KnowledgeUniverse             | DDIM-AI structured question bank (Levels 1–5) |
+| **behavioralMatrix**        | Array\<BehavioralCompetency\> | DDIM-AI C1–C15 behavioral competencies        |
 
-| Field           | Type   | Description                                     |
-| :-------------- | :----- | :---------------------------------------------- |
-| name            | String | Name of sub category (e.g., Delivery, Clinical) |
-| description     | String | Explanation of the sub category                 |
-| totalExperience | String | Required experience (e.g., 2–5 years)           |
+##  **Sub Sub Category Model**
 
-Admins can add multiple sub categories using **Add Sub Category**.
+| Field               | Type            | Description                                             |
+| :------------------ | :-------------- | :------------------------------------------------------ |
+| **name**            | String          | Specialization name (e.g., “Consulting”, “Contracting”) |
+| **description**     | String          | Description                                             |
+| **totalExperience** | String          | Required experience                                     |
+| **targetCompanies** | Array\<String\> | Linked companies                                        |
+| **ddimTags**        | Array\<String\> | Optional DDIM domains (e.g., PTW, CSE, Process Safety)  |
 
-## Sub Sub Categories
+##  **DDIM-AI Knowledge Universe Model **
 
-Each Sub Category supports **N number of sub-sub-categories**.
+| Field      | Type                        | Description                           |
+| :--------- | :-------------------------- | :------------------------------------ |
+| **level1** | Array\<Question\>           | Fundamentals (Conceptual)             |
+| **level2** | Array\<Question\>           | Applied & Scenarios (Operational)     |
+| **level3** | Array\<Question\>           | Expert Q&A (Root Cause / Diagnostics) |
+| **level4** | Array\<Question\>           | Expert & Case-Based (Real incidents)  |
+| **level5** | Array\<BehavioralQuestion\> | Behavioral Competency Matrix (C1–C15) |
 
-### Sub Sub Category Fields
+## **Purpose**
 
-| Field           | Type   | Description                  |
-| :-------------- | :----- | :--------------------------- |
-| name            | String | Detailed specialization name |
-| description     | String | Description                  |
-| totalExperience | String | Required experience          |
-| targetCompanies | Array  | Linked preferred companies   |
+Category Management defines the complete multi-level role taxonomy used across the RMS.\
+It enables administrators to structure roles into **Category → Sub Category → Sub Sub Category**, along with detailed role attributes such as objectives, responsibilities, competencies, standards, certifications, and KPIs.
 
-Admins can add multiple sub-sub categories using **Add Sub Sub Category**.
+With the integration of the **DDIM-AI Knowledge Universe**, Category Management also becomes the central source of truth for:
 
-## Purpose
+- Role-based knowledge mapping (Levels 1–5)
+- Scenario, diagnostic, and expert-level safety/functional Q&A
+- Behavioral competency evaluation (C1–C15)
+- Automated JD creation and candidate evaluation
+- AI-driven profile articulation and interviewing workflows
 
-Category Management creates a consistent role taxonomy shared across:
+This ensures that every job role within the system is defined with precise skills, behaviors, responsibilities, and evaluation criteria aligned to industry standards (NEBOSH, OSHA, ISO 45001, NFPA, etc.).
 
-- JD Creation
-- Candidate classification
-- Profile Articulation
+## **Summary**
 
-## Summary
+Category Management forms the **core master structure** of the RMS.\
+It organizes roles into **multi-level hierarchies**, ensures consistency in naming, enables accurate job role definition, and supports advanced AI-based evaluation.
 
-Category Management is the core module that defines the **role structure** of the entire RMS.\
-It allows admins to build a complete multi-level taxonomy:
+Each Category contains Sub Categories and Sub Sub Categories, with detailed definitions such as:
 
-- **Category** (highest level)
-- **Sub Category** (specialized role group)
-- **Sub Sub Category** (detailed specialization + target companies)
+- Role purpose & objective
+- Core responsibilities
+- Safety or functional coverage areas
+- Interfaces & stakeholder mapping
+- Competence & certification requirements
+- Applicable standards and KPIs
+- DDIM-AI knowledge universe (Levels 1–5)
+- Behavioral competency matrix (C1–C15)
 
-This structure is reused across the platform to keep naming consistent and to improve filtering, reporting, and search.
+This unified taxonomy is reused across:
+
+- **JD Creation**
+- **Candidate Profile Structuring**
+- **Profile Articulation**
+- **Interview Q&A Generation**
+- **Assessment & Training Readiness Analysis**
+
+By combining structured role metadata with DDIM-AI's deep knowledge mapping, Category Management ensures consistent job definitions, stronger filtering and reporting, standardized competency evaluation, and accurate AI-powered recommendations throughout the RMS.

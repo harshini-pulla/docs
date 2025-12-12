@@ -34,7 +34,7 @@ router
   .get(protect, requirePermission('category', 'read'), getCategory)
 ```
 
-##  POST /api/categories
+## POST /api/categories
 
 Create a new category.\
 Access: `category:create`
@@ -65,4 +65,16 @@ Access: `category:delete`
 router
   .route('/:id')
   .delete(protect, requirePermission('category', 'delete'), deleteCategory)
+```
+
+## POST /api/categories/extract-question
+
+Automatically extracts Levels 1–5 + Behavioral Matrix using OpenAI.\
+**Access:** `category:update`
+
+```
+router
+  .route('/extract-questions')
+  .post(protect, requirePermission('category', 'update'), upload.single('file'),
+   extractQuestionsFromFile);
 ```
