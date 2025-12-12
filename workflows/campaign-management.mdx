@@ -1,153 +1,227 @@
-# **Recruitment Campaign Workflow**
+# Recruitment Campaign Workflow
 
 This workflow explains how admins and recruiters create, manage, and track hiring campaigns inside the RMS.
+
+---
+
+## Workflow Video
 
 <video controls width="800">
   <source src="https://github.com/harshini-pulla/docs/blob/main/public/videos/campiagn%20.mp4?raw=true" type="video/mp4" />
   Your browser does not support the video tag.
 </video>
 
-## **Create Recruitment Campaign**
+---
+
+## Public Candidate Self-Application Form (New Feature)
+
+When a campaign is created, RMS automatically generates a **unique public application link**.  
+This link can be shared with candidates through email, WhatsApp, job postings, social media, or the client's website.
+
+Candidates can open the link, fill out the application form themselves, and submit it directly into the system.
+
+### Public Form Workflow Video
+
+<video controls width="800">
+  <source src="https://raw.githubusercontent.com/harshini-pulla/docs/main/public/videos/campaign%20form.mp4" type="video/mp4" />
+  Your browser does not support the video tag.
+</video>
+
+---
+
+## How the Public Application Link Works
+
+### 1. Campaign is Created  
+As soon as a new recruitment campaign is saved, RMS automatically generates a **public candidate application URL**.
+
+### 2. Link Sharing  
+Recruiters can copy the link and share it with candidates via:  
+- Email  
+- WhatsApp  
+- Job Boards  
+- LinkedIn or Social Media Posts  
+- Company Career Page  
+
+### 3. Candidate Opens the Form  
+The candidate sees a structured online application form including:  
+- Basic Information  
+- Contact Details  
+- Experience  
+- Skills  
+- Resume Upload  
+- Mandatory/optional campaign-specific questions  
+
+### 4. Candidate Submits the Form  
+Once submitted:
+
+- A **new candidate profile** is created automatically  
+- The candidate is linked under the respective campaign’s **Candidate List**  
+- Recruiters can immediately begin screening or evaluating  
+- Pre-screening forms, interview workflows, and evaluations remain the same  
+
+### 5. Recruiter Dashboard Updates Automatically  
+Recruiters can view:  
+- Candidate details  
+- Resume  
+- Public form responses  
+- Status, rating, and evaluation  
+- Activity timeline  
+
+This provides a seamless way to accept applications without manual entry.
+
+---
+
+## Create Recruitment Campaign
 
 Click **New Campaign**
 
-## **A. General Info**
+---
+
+## A. General Info
 
 Fill in the required details:
 
-- **Select Profile Articulation**
-- **Campaign Name**
-- **Status** (Planning / Active / On Hold / Completed)
-- **Company Name**
-- **Company Email**
-- **Start Date**
-- **End Date**
-- **Salary Offered Range** (Min / Max)
-- **Vendor Rate**
+- Select Profile Articulation  
+- Campaign Name  
+- Status (Planning / Active / On Hold / Completed)  
+- Company Name  
+- Company Email  
+- Start Date  
+- End Date  
+- Salary Offered Range (Min / Max)  
+- Vendor Rate  
 
 Click **Save** to create the base campaign.
 
 ![Screenshot 2025-11-28 140433.png](/images/Screenshot2025-11-28140433.png)
 
-## **B. Pre-Screening Form**
+---
 
-### **Purpose**
+## B. Pre-Screening Form
 
-The Pre-Screening Form is the **first evaluation test** sent to candidates after they are shortlisted.\
-It helps recruiters verify fundamental eligibility before interviews.
+### Purpose
 
-### **Steps**
+The Pre-Screening Form is the first eligibility evaluation sent to candidates after they are marked Fit.
 
-- Enter **Form Title** (default: "Pre-screening Form")
-- Add questions using **Add Question**
-- For each question:
-  - Enter **Question Text**
-  - Select **Input Type** (Text, Number, Yes/No, Select)
-  - Mark **Required** if needed
-- Click **Preview Form** to see how the candidate will view it
-- Click **Save**
+### Steps
 
-### **How it works in the system**
+- Enter Form Title  
+- Add questions  
+- Select input type  
+- Mark required fields  
+- Preview the form  
+- Save  
 
-- After a candidate is marked **Fit**, the system sends this pre-screening form link via email.
-- Candidate responses appear in:\
-  **Campaign → Candidate → Pre-Screening Responses**
+### System Behavior
+
+After a candidate is marked Fit, the system sends this form link automatically.  
+Their responses appear in:  
+Campaign → Candidate → Pre-Screening Responses
 
 ![Screenshot 2025-11-28 140510.png](/images/Screenshot2025-11-28140510.png)
 
-## **C. Question Bank**
+---
 
-### **Purpose**
+## C. Question Bank
 
-The Question Bank is used by the **AI interview engine** to ask relevant questions and evaluate candidate answers.
+### Purpose
 
-### **Steps**
+Used by the AI interview engine to evaluate candidate responses.
 
-- Click **Add Question**
-- Enter **Question**
-- Enter the **Expected Answer**
-- Add multiple Q&A pairs as needed
-- Click **Save Questions**
+### Steps
 
-### **How it works in the system**
+- Add Question  
+- Enter Expected Answer  
+- Save Questions  
 
-- The AI uses these questions during interviews to:
-  - Evaluate candidate responses
-  - Generate interview summaries
-  - Produce fit/no-fit recommendations
-  - Maintain consistent assessment across candidates
+### System Behavior
+
+The AI interview engine uses this data to:  
+- Evaluate responses  
+- Generate summaries  
+- Provide fit/no-fit recommendations  
 
 ![Screenshot 2025-11-28 140545.png](/images/Screenshot2025-11-28140545.png)
 
-## **View Campaign**
+---
 
-- Click the **eye icon** on any campaign.
-- View:
-  - Complete role details
-  - Salary, budget & status
-  - Linked Profile Articulation
-  - Pre-screening form
-  - Question bank
-  - Assigned recruiters
+## View Campaign
 
-Used for reviewing information before editing.
+Displays the complete campaign configuration, including:  
+- Profile articulation  
+- Salary  
+- Status  
+- Pre-screening form  
+- Question bank  
+- Assigned recruiters  
 
 ![Screenshot 2025-11-28 140612.png](/images/Screenshot2025-11-28140612.png)
 
-## **Edit Campaign** 
+---
 
-- Click **Edit** on the selected campaign.
-- Update:
-  - Status
-  - Timeline
-  - Salary or Budget
-  - Profile Articulation
-  - Company details
-- Click **Save**\
-  → Changes reflect instantly.
+## Edit Campaign
+
+Allows updates to:  
+- Status  
+- Salary  
+- Timeline  
+- Company details  
+- Profile articulation  
 
 ![Screenshot 2025-11-28 140643.png](/images/Screenshot2025-11-28140643.png)
 
-## **Delete Campaign**
+---
 
-- Click **Delete**
-- Confirm deletion
-- Campaign is removed permanently (if not linked to critical dependencies).
+## Delete Campaign
+
+- Click Delete  
+- Confirm the action  
+- Campaign is removed permanently  
 
 ![image.png](/images/image.png)
 
-## **Search & Filter Campaigns**
+---
 
-You can filter campaigns by:
+## Search and Filter Campaigns
 
-- Status (Active, Planning, Completed)
-- Client name
-- Profile Articulation
-- Campaign title
+Filter by:  
+- Status  
+- Client  
+- Profile Articulation  
+- Campaign Title  
 
-Search supports keywords in:
-
-- Campaign name
-- Company name
-- Profile name
+Search supports:  
+- Campaign name  
+- Company name  
+- Profile name  
 
 ![Screenshot 2025-11-28 140849.png](/images/Screenshot2025-11-28140849.png)
 
-## **Where Is Recruitment Campaign Used?**
+---
 
-Recruitment Campaigns link directly to:
+## Where Recruitment Campaign Is Used
 
-- **Candidate Tracking**
-- **Interview Scheduling**
-- **Pre-Screening Responses**
-- **AI Interview Evaluations**
-- **Client Notes & Approvals**
-- **CV Feedback & Representation Emails**
+Recruitment campaigns connect to:  
+- Candidate tracking  
+- Interview scheduling  
+- Pre-screening responses  
+- AI interview evaluations  
+- Client feedback  
+- CV approvals  
+- Representation workflows  
 
-All downstream workflows rely on the **campaignId**.
+All based on a shared **campaignId**.
 
-## **Summary**
+---
 
-Recruitment Campaign acts as the **core hiring container**.\
-Every candidate action — shortlisting, screening, interviewing, feedback, evaluation — is tied to a specific campaign.\
-It ensures structured execution of hiring processes across clients and roles.
+## Summary
+
+Recruitment Campaign is the central hiring workflow in RMS.  
+Every activity — sourcing, screening, interviewing, evaluation — flows through it.
+
+With the introduction of the **Public Candidate Self-Application Link**, RMS now supports both:
+
+- Recruiter-led candidate intake  
+- Candidate-driven self-application  
+
+This makes the hiring pipeline faster, scalable, and more automated.
