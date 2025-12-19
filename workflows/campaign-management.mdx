@@ -2,7 +2,6 @@
 
 This workflow explains how admins and recruiters create, manage, and track hiring campaigns inside the RMS.
 
-
 ## Workflow Video
 
 <video controls width="800">
@@ -13,7 +12,7 @@ This workflow explains how admins and recruiters create, manage, and track hirin
 
 ## Public Candidate Self-Application Form (New Feature)
 
-When a campaign is created, RMS automatically generates a **unique public application link**.  
+When a campaign is created, RMS automatically generates a **unique public application link**.\
 This link can be shared with candidates through email, WhatsApp, job postings, social media, or the client's website.
 
 Candidates can open the link, fill out the application form themselves, and submit it directly into the system.
@@ -28,68 +27,73 @@ Candidates can open the link, fill out the application form themselves, and subm
 
 ## How the Public Application Link Works
 
-### 1. Campaign is Created  
+### 1. Campaign is Created
+
 As soon as a new recruitment campaign is saved, RMS automatically generates a **public candidate application URL**.
 
-### 2. Link Sharing  
-Recruiters can copy the link and share it with candidates via:  
-- Email  
-- WhatsApp  
-- Job Boards  
-- LinkedIn or Social Media Posts  
-- Company Career Page  
+### 2. Link Sharing
 
-### 3. Candidate Opens the Form  
-The candidate sees a structured online application form including:  
-- Basic Information  
-- Contact Details  
-- Experience  
-- Skills  
-- Resume Upload  
-- Mandatory/optional campaign-specific questions  
+Recruiters can copy the link and share it with candidates via:
 
-### 4. Candidate Submits the Form  
+- Email
+- WhatsApp
+- Job Boards
+- LinkedIn or Social Media Posts
+- Company Career Page
+
+### 3. Candidate Opens the Form
+
+The candidate sees a structured online application form including:
+
+- Basic Information
+- Contact Details
+- Experience
+- Skills
+- Resume Upload
+- Mandatory/optional campaign-specific questions
+
+### 4. Candidate Submits the Form
+
 Once submitted:
 
-- A **new candidate profile** is created automatically  
-- The candidate is linked under the respective campaign’s **Candidate List**  
-- Recruiters can immediately begin screening or evaluating  
-- Pre-screening forms, interview workflows, and evaluations remain the same  
+- A **new candidate profile** is created automatically
+- The candidate is linked under the respective campaign’s **Candidate List**
+- Recruiters can immediately begin screening or evaluating
+- Pre-screening forms, interview workflows, and evaluations remain the same
 
-### 5. Recruiter Dashboard Updates Automatically  
-Recruiters can view:  
-- Candidate details  
-- Resume  
-- Public form responses  
-- Status, rating, and evaluation  
-- Activity timeline  
+### 5. Recruiter Dashboard Updates Automatically
+
+Recruiters can view:
+
+- Candidate details
+- Resume
+- Public form responses
+- Status, rating, and evaluation
+- Activity timeline
 
 This provides a seamless way to accept applications without manual entry.
-
 
 ## Create Recruitment Campaign
 
 Click **New Campaign**
 
-
 ## A. General Info
 
 Fill in the required details:
 
-- Select Profile Articulation  
-- Campaign Name  
-- Status (Planning / Active / On Hold / Completed)  
-- Company Name  
-- Company Email  
-- Start Date  
-- End Date  
-- Salary Offered Range (Min / Max)  
-- Vendor Rate  
+- Select Profile Articulation
+- Campaign Name
+- Status (Planning / Active / On Hold / Completed)
+- Company Name
+- Company Email
+- Start Date
+- End Date
+- Salary Offered Range (Min / Max)
+- Vendor Rate
 
 Click **Save** to create the base campaign.
 
 ![Screenshot 2025-11-28 140433.png](/images/Screenshot2025-11-28140433.png)
-
 
 ## B. Pre-Screening Form
 
@@ -99,116 +103,168 @@ The Pre-Screening Form is the first eligibility evaluation sent to candidates af
 
 ### Steps
 
-- Enter Form Title  
-- Add questions  
-- Select input type  
-- Mark required fields  
-- Preview the form  
-- Save  
+- Enter Form Title
+- Add questions
+- Select input type
+- Mark required fields
+- Preview the form
+- Save
 
 ### System Behavior
 
-After a candidate is marked Fit, the system sends this form link automatically.  
-Their responses appear in:  
+After a candidate is marked Fit, the system sends this form link automatically.\
+Their responses appear in:\
 Campaign → Candidate → Pre-Screening Responses
 
 ![Screenshot 2025-11-28 140510.png](/images/Screenshot2025-11-28140510.png)
 
+## **C. Question Bank**
 
-## C. Question Bank
+### **Purpose**
 
-### Purpose
+The Question Bank defines the questions used by the **AI interview engine** to evaluate candidates.\
+Questions can be added manually or **imported directly from Category DDIM**, ensuring role-aligned and standardized assessments.
 
-Used by the AI interview engine to evaluate candidate responses.
+### **Types of Questions Supported**
 
-### Steps
+The Question Bank supports **two ways of adding questions**:
 
-- Add Question  
-- Enter Expected Answer  
-- Save Questions  
+#### **1. Manual Questions**
 
-### System Behavior
+Recruiters can manually define custom questions for the campaign.
 
-The AI interview engine uses this data to:  
-- Evaluate responses  
-- Generate summaries  
-- Provide fit/no-fit recommendations  
+- Click **Add Question**
+- Enter:
+  - Question
+  - Expected Answer
+- Save Questions
 
-![Screenshot 2025-11-28 140545.png](/images/Screenshot2025-11-28140545.png)
+These are useful for:
 
+- Client-specific checks
+- Custom screening needs
+- Role-specific nuances
+
+![Screenshot 2025 12 19 104405](/images/Screenshot2025-12-19104405.png)
+
+#### **2. Import Questions from Category DDIM (New)**
+
+Recruiters can import **predefined DDIM questions** mapped to the selected **Profile Articulation → Category → Sub Category**.
+
+Steps:
+
+1. Click **Import from DDIM**
+2. System fetches questions from Category DDIM
+3. Questions are grouped automatically by:
+   - Level 1: Fundamentals
+   - Level 2: Applied & Scenario
+   - Level 3: Expert Diagnostic
+   - Level 4: Case-Based
+   - Level 5: Behavioral Competencies
+4. Imported questions appear instantly in the Question Bank
+5. Click **Save**
+
+> Example: “Imported 65 DDIM questions”
+
+![Screenshot 2025 12 19 103438](/images/Screenshot2025-12-19103438.png)
+
+### **How DDIM Questions Are Used in Interviews**
+
+- DDIM questions imported into the campaign become the **primary interview questions**
+- The AI interview engine:
+  - Asks these exact questions during interviews
+  - Evaluates candidate responses against DDIM standards
+  - Generates structured interview summaries
+  - Produces fit / no-fit recommendations
+- This ensures:
+  - Consistent evaluation across candidates
+  - Alignment with role competencies and standards
+  - Reduced interviewer bias
+
+### **System Behavior**
+
+- Manual + DDIM questions can coexist in the same campaign
+- DDIM questions are auto-tagged with:
+  - Difficulty level
+  - Competency
+  - Standard (ISO, OSHA, etc., if applicable)
+- Question Bank is reused across:
+  - AI interviews
+  - Interview summaries
+  - Candidate evaluation reports
 
 ## View Campaign
 
-Displays the complete campaign configuration, including:  
-- Profile articulation  
-- Salary  
-- Status  
-- Pre-screening form  
-- Question bank  
-- Assigned recruiters  
+Displays the complete campaign configuration, including:
+
+- Profile articulation
+- Salary
+- Status
+- Pre-screening form
+- Question bank
+- Assigned recruiters
 
 ![Screenshot 2025-11-28 140612.png](/images/Screenshot2025-11-28140612.png)
 
-
 ## Edit Campaign
 
-Allows updates to:  
-- Status  
-- Salary  
-- Timeline  
-- Company details  
-- Profile articulation  
+Allows updates to:
+
+- Status
+- Salary
+- Timeline
+- Company details
+- Profile articulation
 
 ![Screenshot 2025-11-28 140643.png](/images/Screenshot2025-11-28140643.png)
 
-
 ## Delete Campaign
 
-- Click Delete  
-- Confirm the action  
-- Campaign is removed permanently  
+- Click Delete
+- Confirm the action
+- Campaign is removed permanently
 
 ![image.png](/images/image.png)
 
-
 ## Search and Filter Campaigns
 
-Filter by:  
-- Status  
-- Client  
-- Profile Articulation  
-- Campaign Title  
+Filter by:
 
-Search supports:  
-- Campaign name  
-- Company name  
-- Profile name  
+- Status
+- Client
+- Profile Articulation
+- Campaign Title
+
+Search supports:
+
+- Campaign name
+- Company name
+- Profile name
 
 ![Screenshot 2025-11-28 140849.png](/images/Screenshot2025-11-28140849.png)
 
-
 ## Where Recruitment Campaign Is Used
 
-Recruitment campaigns connect to:  
-- Candidate tracking  
-- Interview scheduling  
-- Pre-screening responses  
-- AI interview evaluations  
-- Client feedback  
-- CV approvals  
-- Representation workflows  
+Recruitment campaigns connect to:
+
+- Candidate tracking
+- Interview scheduling
+- Pre-screening responses
+- AI interview evaluations
+- Client feedback
+- CV approvals
+- Representation workflows
 
 All based on a shared **campaignId**.
 
-
 ## Summary
 
-Recruitment Campaign is the central hiring workflow in RMS.  
+Recruitment Campaign is the central hiring workflow in RMS.\
 Every activity — sourcing, screening, interviewing, evaluation — flows through it.
 
 With the introduction of the **Public Candidate Self-Application Link**, RMS now supports both:
 
-- Recruiter-led candidate intake  
-- Candidate-driven self-application  
+- Recruiter-led candidate intake
+- Candidate-driven self-application
 
 This makes the hiring pipeline faster, scalable, and more automated.
