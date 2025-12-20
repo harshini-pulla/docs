@@ -5,42 +5,43 @@ This workflow shows how administrators create and manage **Categories → Sub Ca
 
 ## Workflow Video
 
-
 <video controls width="800">
   <source src="https://github.com/harshini-pulla/docs/blob/main/public/videos/category%20management.mp4?raw=true" type="video/mp4" />
   Your browser does not support the video tag.
 </video>
 
 
-
 ## Workflow Overview
 
-1. Admin opens Category Management
-2. Creates or edits a Category
-3. Adds Sub Categories (role clusters)
-4. Defines DDIM knowledge and competencies
-5. Reviews the complete hierarchy
-6. Saves and uses it across RMS
+1. Admin opens Category Management  
+2. Creates or edits a Category  
+3. Adds Sub Categories (role clusters)  
+4. Adds questions to Sub Categories  
+5. Defines DDIM knowledge and competencies  
+6. Reviews the complete hierarchy  
+7. Saves and uses it across RMS  
+
 
 ## Step 1: Create Category
 
 1. Click **New Category**
 2. Enter:
-   - Category Name
-   - Description
+   - Category Name  
+   - Description  
 3. Select **Status**
-   - Active
-   - Inactive
+   - Active  
+   - Inactive  
 
 ### DDIM-AI Integration
 
 At the Category level, DDIM defines:
 
-- Broad knowledge domains
-- Applicable safety or technical standards
-- Overall difficulty context (Basic → Intermediate → Expert)
+- Broad knowledge domains  
+- Applicable safety or technical standards  
+- Overall difficulty context (Basic → Intermediate → Expert)  
 
 This allows RMS to group roles correctly within the DDIM knowledge framework.
+
 
 ## Step 2: Add Sub Category
 
@@ -48,79 +49,148 @@ A Sub Category defines a **role cluster** and is the primary layer where DDIM in
 
 1. Inside a Category, click **Add Sub Category**
 2. Enter:
-   - Name
-   - Description
-   - Total Experience
+   - Name  
+   - Description  
+   - Total Experience  
 3. Click **Save**
 
 ![Screenshot 2025 12 19 115124](/images/Screenshot2025-12-19115124.png)
+
 
 ### DDIM-AI Integration
 
 Each Sub Category may include:
 
-- Primary objective
-- Core responsibilities
-- Coverage areas
-- Interfaces
-- Competence requirements
-- Certifications
-- Key standards
-- KPIs
+- Primary objective  
+- Core responsibilities  
+- Coverage areas  
+- Interfaces  
+- Competence requirements  
+- Certifications  
+- Key standards  
+- KPIs  
+
 
 ### DDIM Knowledge Levels Supported
 
-- Level 1: Fundamentals
-- Level 2: Applied and Scenario Questions
-- Level 3: Expert Diagnostic Questions
-- Level 4: Case-Based and Incident Questions
-- Level 5: Behavioral Competencies (C1–C15)
+- Level 1: Fundamentals  
+- Level 2: Applied and Scenario Questions  
+- Level 3: Expert Diagnostic Questions  
+- Level 4: Case-Based and Incident Questions  
+- Level 5: Behavioral Competencies (C1–C15)  
 
 These levels power:
 
-- JD auto-generation
-- AI-based evaluation
-- Interview preparation
-- Competency scoring
+- JD auto-generation  
+- AI-based evaluation  
+- Interview preparation  
+- Competency scoring  
 
 ![Screenshot 2025 12 19 115229](/images/Screenshot2025-12-19115229.png)
 
-## Step 3: Edit Category Structure
+
+## Step 3: Add Questions to Sub Category
+
+Each Sub Category supports adding **DDIM questions**, which are later used in:
+
+- JD creation  
+- Campaign Question Banks  
+- AI interviews  
+- Candidate evaluation  
+
+### Supported Question Creation Methods
+
+Questions can be added in **three ways**:
+
+
+### 1. Manual Question Entry
+
+- Click **Add Question**
+- Enter:
+  - Question  
+  - Expected Answer  
+  - Standard (optional)  
+- Save
+
+Used for custom, role-specific, or client-specific questions.
+
+
+### 2. Upload Questions via PDF / DOCX
+
+- Click **Upload PDF / DOCX**
+- Upload a document containing questions
+- System extracts questions automatically
+- Extracted questions are mapped to appropriate DDIM levels
+
+Used for importing existing interview or assessment question banks.
+
+
+### 3. Generate Questions Using AI
+
+Admins can generate questions automatically using AI.
+
+Steps:
+1. Click **Generate with AI**
+2. Select:
+   - DDIM Level(s)
+   - Question type
+3. Choose the **number of questions**
+   - Minimum: **1**
+   - Maximum: **50**
+4. Click **Generate**
+5. Review and save generated questions
+
+The AI generates questions based on:
+- Category  
+- Sub Category  
+- DDIM knowledge structure  
+
+
+### AI Question Generation Workflow Video
+
+<video controls width="800">
+  <source src="https://github.com/harshini-pulla/docs/blob/main/public/videos/category%20ai.mp4?raw=true" type="video/mp4" />
+  Your browser does not support the video tag.
+</video>
+
+
+## Step 4: Edit Category Structure
 
 Admins can update:
 
-- Category name
-- Description
-- Status
-- Sub Category details
-- Sub Sub Category details
-- DDIM knowledge levels
-- Behavioral competency matrix
+- Category name  
+- Description  
+- Status  
+- Sub Category details  
+- DDIM questions  
+- DDIM knowledge levels  
+- Behavioral competency matrix  
 
 All updates are reflected immediately across:
 
-- JD Creation
-- Profile Articulation
-- Campaign Question Banks
-- AI Interviews
-- Candidate Evaluation
+- JD Creation  
+- Profile Articulation  
+- Campaign Question Banks  
+- AI Interviews  
+- Candidate Evaluation  
 
-## Step 4: View Category
+
+## Step 5: View Category
 
 Viewing a category displays:
 
-- Complete hierarchy
-- Sub Categories and Sub Sub Categories
-- DDIM Knowledge Universe (Levels 1–5)
-- Behavioral Competency Matrix (C1–C15)
-- Standards, KPIs, responsibilities, competencies
-- Target companies
+- Complete hierarchy  
+- Sub Categories  
+- DDIM Knowledge Universe (Levels 1–5)  
+- Behavioral Competency Matrix (C1–C15)  
+- Standards, KPIs, responsibilities, competencies  
 
 This view acts as the **single source of truth** for role intelligence.
 
 ![Screenshot 2025 12 19 115426](/images/Screenshot2025-12-19115426.png)
 
-## Step 5: Delete Category
+
+## Step 6: Delete Category
 
 1. Click **Delete**
 2. Confirm deletion
@@ -129,22 +199,25 @@ The Category and all nested DDIM metadata are removed from the RMS.
 
 ![Screenshot 2025 12 19 115502](/images/Screenshot2025-12-19115502.png)
 
+
 ## DDIM-AI Integration Summary
 
 DDIM is embedded directly into the Category workflow.
 
 As admins move from:
 
-- Category → Sub Category
+- Category → Sub Category  
 
 DDIM progressively adds:
 
-- Structured knowledge (Levels 1–4)
-- Behavioral competencies (Level 5)
-- Standards, KPIs, and certifications
-- Role objectives and responsibilities
+- Structured knowledge (Levels 1–4)  
+- Behavioral competencies (Level 5)  
+- Standards, KPIs, and certifications  
+- Role objectives and responsibilities  
+- Manually added, imported, and AI-generated questions  
 
-This ensures that JD creation, candidate evaluation, and profile articulation remain accurate, standardized, and AI-ready.
+This ensures JD creation, candidate evaluation, and profile articulation remain accurate, standardized, and AI-ready.
+
 
 ## Summary
 
@@ -152,12 +225,13 @@ Category Management is the foundation of RMS intelligence.
 
 Hierarchy:
 
-- **Category** → Role domain
-- **Sub Category** → Role cluster enriched with DDIM knowledge
+- **Category** → Role domain  
+- **Sub Category** → Role cluster enriched with DDIM knowledge  
 
 This structured flow enables:
 
-- Accurate JD creation
-- Standardized interviews
-- Consistent candidate evaluation
+- Accurate JD creation  
+- Standardized interviews  
+- Consistent candidate evaluation  
+- AI-generated and curated question banks  
 - AI-driven role intelligence across the RMS
