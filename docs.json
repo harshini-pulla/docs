@@ -9,6 +9,15 @@
   },
   "favicon": "/favicon.svg",
 "navigation": {
+  "global": {
+    "anchors": [
+      {
+        "anchor": "Documentation",
+        "icon": "book-open-cover",
+        "href": "https://ioteractiontechnologiesservicespvtltd.mintlify.app/models/organization"
+      }
+    ]
+  },
   "tabs": [
     {
       "tab": "Models",
@@ -18,10 +27,11 @@
           "pages": [
             "models/organization",
             "models/user",
-            "models/category",
+            "models/position-master",
             "models/client",
             "models/target-company",
-            "models/position-master",
+            "models/category",
+            "models/position-allocation",
             "models/jd",
             "models/profile-articulation",
             "models/social-media",
@@ -33,19 +43,20 @@
         }
       ]
     },
-
     {
       "tab": "Workflows",
-      "groups": [
+      "pages": [
+        "untitled-page",
         {
           "group": "Process Flows",
           "pages": [
             "workflows/organization-management",
             "workflows/user-management",
-            "workflows/category-management",
+            "workflows/position-master-management",
             "workflows/client-management",
             "workflows/target-company-management",
-            "workflows/position-master-management",
+            "workflows/category-management",
+            "workflows/position-allocation-management",
             "workflows/jd-management",
             "workflows/profile-articulation-management",
             "workflows/social-media-management",
@@ -57,7 +68,6 @@
         }
       ]
     },
-
     {
       "tab": "APIs",
       "groups": [
@@ -66,10 +76,11 @@
           "pages": [
             "apis/organization",
             "apis/user",
-            "apis/category",
+            "apis/position-master",
             "apis/client",
             "apis/target-company",
-            "apis/position-master",
+            "apis/category",
+            "apis/position-allocation",
             "apis/jd",
             "apis/profile-articulation",
             "apis/social-media",
@@ -81,18 +92,7 @@
         }
       ]
     }
-  ],
-
-  "global": {
-    "anchors": [
-      {
-        "anchor": "Documentation",
-        "href":
-        "https://ioteractiontechnologiesservicespvtltd.mintlify.app/models/organization",
-        "icon": "book-open-cover"
-      }
-    ]
-  }
+  ]
 },
   "logo": {
     "light": "/logo/coffee-rms-logo-1.svg",

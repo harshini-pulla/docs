@@ -1,0 +1,116 @@
+---
+title: "Position Allocation"
+---
+
+# Position Allocation API
+
+Position Allocation APIs manage **recruiter-to-role mappings** and enforce role-based access control (RBAC).
+
+These APIs directly control recruiter job visibility across the system.
+
+---
+
+## Endpoints Overview
+
+| Method | Endpoint                                   | Description             | Permission      |
+| :----- | :----------------------------------------- | :---------------------- | :-------------- |
+| GET    | `/api/position-allocations`                | Fetch all allocations   | position:read   |
+| GET    | `/api/position-allocations/:id`            | Fetch allocation by ID  | position:read   |
+| GET    | `/api/position-allocations/my-allocations` | Recruiter’s allocations | position:read   |
+| POST   | `/api/position-allocations`                | Create allocation       | position:create |
+| PUT    | `/api/position-allocations/:id`            | Update allocation       | position:update |
+| DELETE | `/api/position-allocations/:id`            | Delete allocation       | position:delete |
+
+## Create Position Allocation
+
+Create a new recruiter → category → sub-category allocation.
+
+**Access:** `position:create`
+
+```
+router.post(
+  '/',
+  protect,
+  requirePermission('position', 'create'),
+  controller.create
+);
+```
+
+## Get All Position Allocations
+
+Fetch all position allocations (Admin / Manager view).
+
+**Access:** `position:read`
+
+```
+router.get(
+  '/',
+  protect,
+  requirePermission('position', 'read'),
+  controller.getAll
+);
+```
+
+## Get Position Allocation by ID
+
+Fetch details of a single position allocation.
+
+**Access:** `position:read`
+
+```
+router.get(
+  '/:id',
+  protect,
+  requirePermission('position', 'read'),
+  controller.getById
+);
+```
+
+## Get My Allocations (Recruiter)
+
+Fetch allocations for the logged-in recruiter only.
+
+**Access:** `position:read`
+
+```
+router.get(
+  '/my-allocations',
+  protect,
+  requirePermission('position', 'read'),
+  controller.getMyAllocations
+);
+```
+
+## Update Position Allocation
+
+Update recruiter, category, or sub-category mapping.
+
+**Access:** `position:update`
+
+```
+router.put(
+  '/:id',
+  protect,
+  requirePermission('position', 'update'),
+  controller.update
+);
+```
+
+## Delete Position Allocation
+
+Soft delete a position allocation.
+
+**Access:** `position:delete`
+
+```
+router.delete(
+  '/:id',
+  protect,
+  requirePermission('position', 'delete'),
+  controller.delete
+);
+```
+
+## Summary
+
+Position Allocation APIs provide **secure, RBAC-controlled management** of recruiter role ownership, ensuring accurate job visibility and clean access control.

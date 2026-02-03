@@ -1,0 +1,50 @@
+---
+title: "Position Allocation"
+---
+
+## **What is Position Allocation?**
+
+Position Allocation is a control module used to **assign recruiters to specific job role categories** (Category + Sub-Category).\
+It ensures recruiters only see and work on the jobs they are responsible for, instead of all jobs in the system.
+
+This module is accessible only to **Super Admin, Admin, and Recruiter Manager** roles.
+
+## **Fields**
+
+| Field Name        | Type     | Description                  |
+| :---------------- | :------- | :--------------------------- |
+| `_id`             | ObjectId | Unique allocation ID         |
+| `categoryId`      | ObjectId | Linked Category              |
+| `categoryName`    | String   | Category display name        |
+| `subCategoryId`   | ObjectId | Linked Sub Category          |
+| `subCategoryName` | String   | Sub Category display name    |
+| `recruiterId`     | ObjectId | Assigned recruiter           |
+| `recruiterName`   | String   | Recruiter name               |
+| `recruiterEmail`  | String   | Recruiter email              |
+| `organizationId`  | ObjectId | Organization scope           |
+| `isActive`        | Boolean  | Soft delete flag             |
+| `createdBy`       | ObjectId | Admin who created allocation |
+| `createdAt`       | Date     | Creation timestamp           |
+| `updatedAt`       | Date     | Last update timestamp        |
+
+## **How the Model Works**
+
+- Each record represents **one recruiter → one category + sub-category mapping**
+- Duplicate allocations for the same recruiter + category + sub-category are blocked
+- Records are **soft deleted** (isActive = false)
+
+Organization-scoped to support multi-tenant RMS
+
+## **Purpose**
+
+- Assign ownership of job roles to recruiters
+- Restrict recruiter visibility to allocated categories
+- Prevent duplicate or conflicting recruiter assignments
+- Enable recruiter-specific dashboards and job views
+
+Maintain clear accountability and audit trails
+
+## Summary
+
+The **Position Allocation model** is the backbone of recruiter access control.\
+It ensures clean ownership of job roles, prevents visibility conflicts, and supports scalable recruitment operations.
