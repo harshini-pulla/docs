@@ -44,30 +44,29 @@
       ]
     },
     {
-      "tab": "Workflows",
-      "pages": [
-        "untitled-page",
-        {
-          "group": "Process Flows",
-          "pages": [
-            "workflows/organization-management",
-            "workflows/user-management",
-            "workflows/position-master-management",
-            "workflows/client-management",
-            "workflows/target-company-management",
-            "workflows/category-management",
-            "workflows/position-allocation-management",
-            "workflows/jd-management",
-            "workflows/profile-articulation-management",
-            "workflows/social-media-management",
-            "workflows/campaign-management",
-            "workflows/candidate-management",
-            "workflows/candidate-tracker-management",
-            "workflows/interview-management"
-          ]
-        }
-      ]
-    },
+        "tab": "Workflows",
+        "groups": [
+          {
+            "group": "Process Flows",
+            "pages": [
+              "workflows/organization-management",
+              "workflows/user-management",
+              "workflows/position-master-management",
+              "workflows/client-management",
+              "workflows/target-company-management",
+              "workflows/category-management",
+              "workflows/position-allocation-management",
+              "workflows/jd-management",
+              "workflows/profile-articulation-management",
+              "workflows/social-media-management",
+              "workflows/campaign-management",
+              "workflows/candidate-management",
+              "workflows/candidate-tracker-management",
+              "workflows/interview-management"
+            ]
+          }
+        ]
+      },
     {
       "tab": "APIs",
       "groups": [
