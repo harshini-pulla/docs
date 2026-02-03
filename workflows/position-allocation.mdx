@@ -1,74 +1,71 @@
----
-title: "Position Allocation Management"
----
+# Position Allocation Management Workflow
 
-# Workflow Overview
+This workflow explains how admins define **which recruiter owns which job roles** inside the RMS.
 
-The Position Allocation workflow defines **which recruiter owns which job roles**.
-
-This workflow directly controls:
-
-- Job visibility
-- Campaign access
-- Candidate ownership
-
+<video controls width="800">
+  <source src="https://raw.githubusercontent.com/harshini-pulla/docs/main/public/videos/position%20allocation.mp4" type="video/mp4" />
+  Your browser does not support the video tag.
+</video>
 
 ## Add Position Allocation
 
-1. Open **Position Allocation**
-2. Click **Add Allocation**
-3. Select:
-   - Category
-   - Sub-Category
-   - Recruiter
-4. Save allocation
+1. Click **Add Allocation**
+2. Select:
+   - **Category**
+   - **Sub-Category**
+   - **Recruiter**
+3. Click **Save**
 
-Recruiter is now responsible for jobs under those roles
+The selected recruiter is now responsible for all jobs under those roles.
 
 ![Image](/images/image-1.png)
 
 ## View Allocation
 
 1. Click **View**
-2. See:
+2. See allocation details:
    - Category & sub-category
    - Assigned recruiter
-   - Status and timestamps
+   - Status
+   - Created and updated timestamps
 
 ![Image](/images/image-2.png)
 
 ## Edit Allocation
 
-1. Click **Edit**
-2. Change:
+1. Click **Edit** next to an allocation
+2. Update:
    - Recruiter
    - Category or sub-category
 3. Save changes
 
-Updates apply immediately across recruiter views
+Updates apply immediately across recruiter dashboards and job views.
 
 ![Image](/images/image-3.png)
 
 ## Delete Allocation
 
 1. Click **Delete**
-2. Confirm action
+2. Confirm the action
 
-- Allocation is deactivated (soft delete)
-- Recruiter loses access to those job roles
+Deletion behavior:
+
+- Allocation is **soft-deleted**
+- Recruiter immediately loses access to those job roles
+- Jobs and candidates are no longer visible to that recruiter
 
 ![Image](/images/image-4.png)
 
-## Recruiter Experience Flow
+## Recruiter Experience
 
 1. Recruiter logs in
 2. System fetches **My Allocations**
-3. Recruiter can only see:
+3. Recruiter can only access:
    - Jobs
    - Campaigns
    - Candidates
 
-linked to assigned categories and sub-categories
+linked to their assigned categories and sub-categories.
 
 ## Search & Filter
 
@@ -84,13 +81,14 @@ Recruiters automatically see **only their own allocations**.
 
 ## Where It Is Used
 
+Position Allocation directly controls:
+
 - Recruiter job listing visibility
-- Campaign access control
+- Campaign access permissions
 - Candidate tracker filtering
 - Recruiter dashboards
 
 ## Summary
 
-The **Position Allocation workflow** ensures recruiters focus only on relevant job roles, eliminates overlap, and enforces structured ownership across the recruitment lifecycle.
-
-This module is critical for scaling recruitment teams while maintaining clarity, control, and accountability.
+Position Allocation Management ensures **clear ownership of job roles** across recruiters.  
+It prevents overlap, restricts access correctly, and helps scale recruitment teams with structured control and accountability.
