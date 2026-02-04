@@ -39,7 +39,7 @@
             "models/candidate",
             "models/candidate-tracker",
             "models/interview",
-            "models/Job-board"
+            "models/Job-Board"
 
           ]
         }
