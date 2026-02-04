@@ -38,7 +38,9 @@
             "models/campaign",
             "models/candidate",
             "models/candidate-tracker",
-            "models/interview"
+            "models/interview",
+            "models/Job-board"
+
           ]
         }
       ]
@@ -62,7 +64,8 @@
               "workflows/campaign-management",
               "workflows/candidate-management",
               "workflows/candidate-tracker-management",
-              "workflows/interview-management"
+              "workflows/interview-management",
+              "workflows/job-board-management"
             ]
           }
         ]
@@ -86,7 +89,8 @@
             "apis/campaign",
             "apis/candidate",
             "apis/candidate-tracker",
-            "apis/interview"
+            "apis/interview",
+            "apis/job-board"
           ]
         }
       ]
