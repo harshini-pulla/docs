@@ -1,0 +1,54 @@
+---
+title: "Job Board"
+---
+
+# What is the Job Board?
+
+The **Job Board** is a **public-facing module** that lists all active recruitment campaigns as job opportunities. It allows external candidates to browse jobs and apply **without logging in**, while securely linking applications back into CoffeeRMS.
+
+This module acts as the **entry point for talent into the RMS**.
+
+## Purpose of the Job Board
+
+- Expose active campaigns publicly as job listings
+- Allow candidates to apply without authentication
+- Capture candidate data securely using a public token
+- Convert public applicants into internal **Candidate Profiles + Campaign Candidates**
+- Feed applications directly into **Candidate Tracker** for screening and interviews
+
+## Job Board Model Structure
+
+> The Job Board does not introduce a new database table.\
+> It is a **public projection of the Campaign model** with application metadata.
+
+### Job Board Fields
+
+| Field            | Description                               |
+| :--------------- | :---------------------------------------- |
+| campaignId       | Internal campaign reference               |
+| publicApplyToken | Secure token used for public applications |
+| jobTitle         | Campaign / profile title                  |
+| companyName      | Client or target company                  |
+| employmentType   | Full-time / Contract / Internship         |
+| location         | Job location or remote                    |
+| salaryRange      | Min–Max salary (if enabled)               |
+| startDate        | Campaign start date                       |
+| endDate          | Campaign end date                         |
+| status           | Active campaigns only                     |
+| applicationForm  | Pre-screening form metadata               |
+| createdAt        | Publish timestamp                         |
+
+## Where It Is Used in the Application
+
+- Public URL: `/jobs`
+- Accessible without login
+- Used by:
+  - External candidates
+  - Job portals / shared links
+  - Career pages embedded via iframe (future-ready)
+
+## Summary
+
+The **Job Board model** represents a **public-facing view of active recruitment campaigns**, exposing selected campaign data as job listings without creating a separate database entity. It securely bridges external candidates and internal hiring workflows using a `publicApplyToken`, ensuring applications flow directly into CoffeeRMS as structured **Candidate Profiles** linked to **Recruitment Campaigns**.
+
+This model enables scalable, zero-login hiring intake while preserving data integrity, campaign ownership, and downstream processes like pre-screening, interviews, and candidate tracking.

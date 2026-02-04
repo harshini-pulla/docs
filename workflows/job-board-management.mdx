@@ -1,0 +1,78 @@
+---
+title: "Job Board Management"
+---
+
+# Job Board Workflow
+
+## Workflow Overview 
+
+The Job Board workflow allows candidates to discover open roles, submit applications securely using a public token, and automatically enter the CoffeeRMS hiring pipeline. All applications are mapped to campaigns and routed into Candidate Tracker for further evaluation.
+
+## Detailed Workflow
+
+### 1. Job Discovery
+
+- Candidate visits `/jobs`
+- Sees all **active recruitment campaigns**
+- Can search by:
+  - Role title
+  - Category
+  - Keywords
+
+![Image](/images/image-10.png)
+
+### 2. Job Selection
+
+- Candidate clicks a job card
+- Job details load using a **publicApplyToken**
+- Application metadata is fetched:
+  - Job info
+  - Pre-screening questions
+  - Resume requirements
+
+![Image](/images/image-12.png)
+
+### 3. Application Preparation
+
+- Candidate fills in:
+  - Personal details
+  - Professional details
+- Optional:
+  - Resume upload
+  - Resume parsing to auto-fill form
+- Optional email verification via OTP (if enabled)
+
+### 4. Application Submission
+
+- Candidate submits application
+- System automatically:
+  - Creates Candidate Profile
+  - Links candidate to campaign
+  - Stores pre-screening responses
+  - Marks application as **Submitted**
+
+![Image](/images/image-8.png)
+
+### 5. Internal Pipeline Entry
+
+- Candidate becomes visible in:
+  - Candidate Profile
+  - Candidate Tracker (under the campaign)
+- Recruiters continue workflow:
+  - Screening
+  - Interviews
+  - Verification
+  - Hiring decision
+
+## Search & Discovery
+
+- Keyword-based search on job title
+- Category quick filters
+- Pagination support
+- Only **Active** campaigns are shown
+
+![Image](/images/image-9.png)
+
+## Workflow Summary
+
+The Job Board transforms public interest into structured recruitment data by bridging anonymous candidates directly into CoffeeRMS campaigns, ensuring zero manual intervention while maintaining security and data integrity.

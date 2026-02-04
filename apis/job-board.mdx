@@ -1,0 +1,74 @@
+---
+title: "Job Board"
+---
+
+# Job Board API
+
+The Job Board APIs expose a secure, public interface to list campaigns, collect applications, verify candidates, and submit data into CoffeeRMS without authentication.
+
+All endpoints are **public** and token-driven.
+
+##  Endpoints Overview
+
+| Category       | Endpoint                                   | Purpose                             |
+| :------------- | :----------------------------------------- | :---------------------------------- |
+| Job Listing    | `GET /public/campaigns`                    | Fetch public job listings           |
+| Job Meta       | `GET /public/campaigns/{token}/apply-meta` | Get job + application form metadata |
+| Apply          | `POST /public/campaigns/{token}/apply`     | Submit job application              |
+| Resume Parsing | `POST /public/candidates/parse-resume`     | Parse resume to structured data     |
+| Email OTP      | `POST /public/candidates/email-otp/send`   | Send verification OTP               |
+| Email OTP      | `POST /public/candidates/email-otp/verify` | Verify OTP code                     |
+
+## API Endpoints (Box Style)
+
+###  List Jobs
+
+```
+GET /public/campaigns
+```
+
+Fetches all active job campaigns for the Job Board.
+
+### Get Application Metadata
+
+```
+GET /public/campaigns/{publicApplyToken}/apply-meta
+```
+
+Returns job details, pre-screening questions, and form configuration.
+
+###  Submit Application
+
+```
+POST /public/campaigns/{publicApplyToken}/apply
+```
+
+Submits candidate application (multipart form with resume).
+
+### Parse Resume
+
+```
+POST /public/candidates/parse-resume
+```
+
+Extracts structured candidate data from resume text.
+
+### Send Email OTP
+
+```
+POST /public/candidates/email-otp/send
+```
+
+Sends verification OTP to candidate email.
+
+### Verify Email OTP
+
+```
+POST /public/candidates/email-otp/verify
+```
+
+Validates OTP before final submission.
+
+## API Summary
+
+The Job Board APIs allow CoffeeRMS to safely accept external applications, validate candidates, and convert them into internal hiring records without exposing protected resources or requiring authentication.
