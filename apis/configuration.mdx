@@ -1,0 +1,93 @@
+---
+title: "Configuration"
+---
+
+# Configuration API
+
+Configuration APIs manage **creation, retrieval, validation, and updates** of organization-level system settings.
+
+All APIs are authenticated and protected via RBAC.
+
+##  Endpoints Overview
+
+| Category      | Method | Endpoint                                       | Purpose                                                          |
+| :------------ | :----- | :--------------------------------------------- | :--------------------------------------------------------------- |
+| Organization  | GET    | `/organizations`                               | Fetch all organizations for the **Select Organization** dropdown |
+| Configuration | GET    | `/configurations`                              | Fetch all configurations (admin/debug use)                       |
+| Configuration | GET    | `/configurations/:id`                          | Fetch a configuration by its ID                                  |
+| Configuration | GET    | `/configurations/organization/:organizationId` | Load configuration for a selected organization                   |
+| Configuration | POST   | `/configurations`                              | Create a new configuration for an organization                   |
+| Configuration | PUT    | `/configurations/:id`                          | Update an existing configuration                                 |
+| Configuration | DELETE | `/configurations/:id`                          | Delete a configuration (not exposed in UI)                       |
+| Validation    | POST   | `/configurations/test-smtp`                    | Test SMTP credentials and email delivery                         |
+| Validation    | POST   | `/configurations/test-aws`                     | Test AWS access (S3, SES, CloudWatch)                            |
+
+## Configuration APIs
+
+## Get Configuration by Organization
+
+```
+GET /configurations/organization/:organizationId
+```
+
+- Loads configuration for the selected organization.
+- Returns 404 if none exists.
+
+## Create Configuration
+
+```
+POST /configurations
+```
+
+- Creates a new configuration for an organization.
+- Used when saving configuration for the first time.
+
+## Update Configuration
+
+```
+PUT /configurations/:id
+```
+
+- Updates existing configuration.
+- Replaces SMTP, AWS, and AI model settings.
+
+## Delete Configuration
+
+```
+DELETE /configurations/:id
+```
+
+- Soft or hard deletes a configuration.
+- Not exposed in UI.
+
+## Validation APIs
+
+#### Test SMTP Configuration
+
+```
+POST /configurations/test-smtp
+```
+
+- Verifies SMTP credentials.
+- Sends a test email internally.
+
+#### Test AWS Configuration
+
+```
+POST /configurations/test-aws
+```
+
+- Verifies access to S3, SES, and CloudWatch.
+- Confirms permissions and connectivity.
+
+### Organization API (Supporting)
+
+```
+GET /organizations
+```
+
+- Used to populate organization selector.
+
+## API Summary
+
+Configuration APIs ensure **safe, validated, per-organization setup** of infrastructure and AI services, preventing runtime failures and misconfigurations.

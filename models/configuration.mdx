@@ -1,0 +1,70 @@
+---
+title: "Configuration"
+---
+
+Configure SMTP, AWS, and AI models for your organization
+
+## Configuration Model
+
+The **Configuration model** stores **all operational settings** required to run CoffeeRMS for a specific organization.\
+It acts as a **single source of truth** for infrastructure and AI behavior.
+
+## Configuration Model Structure
+
+| Field            | Type     | Description                |
+| :--------------- | :------- | :------------------------- |
+| organizationId   | ObjectId | Linked organization        |
+| organizationName | String   | Cached org name            |
+| smtpConfig       | Object   | Email configuration        |
+| awsConfig        | Object   | AWS credentials & services |
+| aiModels         | Object   | AI provider/model mapping  |
+| isActive         | Boolean  | Enables/disables config    |
+| createdAt        | Date     | Creation timestamp         |
+| updatedAt        | Date     | Last update timestamp      |
+
+## SMTP Configuration (smtpConfig)
+
+| Field     | Description          |
+| :-------- | :------------------- |
+| host      | SMTP server hostname |
+| port      | SMTP port            |
+| username  | SMTP username        |
+| password  | SMTP password        |
+| fromEmail | Sender email         |
+| fromName  | Sender name          |
+| secure    | SSL/TLS enabled      |
+
+## AWS Configuration (awsConfig)
+
+| Field               | Description          |
+| :------------------ | :------------------- |
+| accessKeyId         | AWS access key       |
+| secretAccessKey     | AWS secret           |
+| region              | AWS region           |
+| s3BucketName        | General file bucket  |
+| s3CvBucket          | CV storage bucket    |
+| s3UrsBucket         | URS storage bucket   |
+| sesRegion           | SES region           |
+| cloudWatchLogGroup  | Log group            |
+| cloudWatchLogStream | Log stream           |
+| sdkLoadConfig       | SDK config flag      |
+| profile             | Optional AWS profile |
+
+## AI Model Configuration (aiModels)
+
+Each AI section uses the same structure:
+
+| Field     | Description                                  |
+| :-------- | :------------------------------------------- |
+| provider  | openai / anthropic / google / azure / custom |
+| modelName | Model identifier                             |
+
+Configured models:
+
+- **Primary Model**
+- **URS Generation Model**
+- **Deep Search Model**
+
+## Model Summary
+
+The Configuration model ensures **organization-specific isolation** of infrastructure and AI behavior, allowing CoffeeRMS to scale securely across multiple tenants.

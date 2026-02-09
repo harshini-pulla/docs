@@ -1,0 +1,75 @@
+---
+title: "Configuration Management"
+---
+
+# Overview
+
+The **Configuration Management** module centralizes all **organization-level system settings** required to run CoffeeRMS. It allows administrators to configure **Email (SMTP)**, **AWS infrastructure**, and **AI model providers** used across screening, resume parsing (URS), and deep search features.
+
+All configurations are stored **per organization** in a single, versioned Configuration record.
+
+# Workflow
+
+### High-Level Flow
+
+Configuration Management follows a **select → configure → validate → save** flow.\
+Admins choose an organization, configure integrations and AI models, validate them in real time, and persist settings for use across the entire platform.
+
+# Detailed Workflow
+
+## 1. Select Organization
+
+- User selects an organization from the dropdown.
+- The system loads the existing configuration for that organization.
+- If no configuration exists, a **new configuration draft** is initialized automatically.
+
+  ![Image](/images/image-18.png)
+
+## 2. Configure System Integrations
+
+The configuration is edited through three logical sections:
+
+**SMTP Configuration**
+
+- Used for all system emails (candidate emails, interview notifications, confirmations).
+- Credentials and sender details are entered.
+
+![Image](/images/image-13.png)
+
+**AWS Configuration**
+
+- Controls file storage (CVs, URS), email services (SES), and logging (CloudWatch).
+- Bucket-level separation ensures structured data handling.
+
+![Image](/images/image-14.png)
+
+**AI Model Configuration**
+
+- Defines which AI provider and model to use for:
+  - Primary AI tasks
+  - URS generation
+  - Deep candidate research
+
+All edits are staged in memory until explicitly saved.
+
+![Image](/images/image-15.png)
+
+## 3. Validate Connections (Optional but Recommended)
+
+- Admin can test SMTP credentials.
+- Admin can test AWS access and permissions.
+- Validation ensures integrations work **before** saving.
+
+![Image](/images/image-16.png)
+
+## 4. Save Configuration
+
+- If configuration exists → it is **updated**.
+- If not → a **new configuration** is created.
+- On success, the configuration becomes active immediately across the system.
+
+![Image](/images/image-17.png)
+
+# Workflow Summary
+
+Configuration Management ensures every organization has **validated infrastructure and AI settings**, enabling stable communication, storage, and intelligent automation across CoffeeRMS.
